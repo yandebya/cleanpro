@@ -1,0 +1,234 @@
+ <meta charset="utf-8"/>
+ <div data-th-fragment="fTestimonials" xmlns:th="http://www.thymeleaf.org">
+ <section id="testimonials" >
+<div id="fonctionnement-01">
+
+           <!--  <div class="content-box-lg">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        About Left Side
+                        
+                                <div >
+                                    <h2 class="centrerText"><strong>avis clients</strong></h2>
+                                </div>
+                        About Right Side
+                       
+
+                    </div>
+
+                    About Bottom
+                    
+
+                </div>
+
+            </div> -->
+
+        </div>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4 col-sm-4 wow slideInLeft">
+
+                    <div class="vertical-heading">
+                        
+                        <h2>Ce que nos clients disent</h2>
+                    </div>
+
+                </div>
+
+                <div class="col-md-8 col-sm-8 wow fadeIn" data-wow-duration="2s">
+
+                    <div id="testimonial-slider" class="owl-carousel owl-theme">
+
+                        <!-- Testimonial 01 -->
+                        <div class="testimonial" th:each=" p: ${listeAvisClient}">
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <h3>Avis des clients</h3>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stars text-right">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p th:text="${p.libelle_avis}"></p>
+
+                            <div class="author">
+
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-3 col-xs-6">
+                                       <a class="fancybox " th:href="@{getPhoto_avis(photo_avis=${p.photo_avis})}"><img class="img-circle " th:src="@{getPhoto_avis(photo_avis=${p.photo_avis})}"width="80" height="80"   alt=""></a>
+                                      </div>
+                                    <div class="col-md-10 col-sm-3 col-xs-6">
+                                        <div class="author-name-des">
+                                            <p  th:text="${p.nom_avis}"></p>
+                                            <p th:text="${p.prenom_avis}"></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Testimonial 02 -->
+                        <!-- <div class="testimonial">
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <h3>Quality Support</h3>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stars text-right">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quas totam, delectus sit corporis quos error qui. Minus cupiditate explicabo minima ea neque perferendis corporis sint earum quas impedit.</p>
+
+                            <div class="author">
+
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-3 col-xs-6">
+                                        <img src="img/testimonial/client-2.jpg" alt="client" class="img-responsive img-circle">
+                                    </div>
+                                    <div class="col-md-10 col-sm-3 col-xs-6">
+                                        <div class="author-name-des">
+                                            <p>Joq Martin</p>
+                                            <p>Senior Developer</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        Testimonial 03
+                        <div class="testimonial">
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <h3>Quality Support</h3>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stars text-right">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quas totam, delectus sit corporis quos error qui. Minus cupiditate explicabo minima ea neque perferendis corporis sint earum quas impedit.</p>
+
+                            <div class="author">
+
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-3 col-xs-6">
+                                        <img src="img/testimonial/client-3.jpg" alt="client" class="img-responsive img-circle">
+                                    </div>
+                                    <div class="col-md-10 col-sm-3 col-xs-6">
+                                        <div class="author-name-des">
+                                            <p>Joq Martin</p>
+                                            <p>Senior Developer</p>
+                                        </div>
+                                    </div>
+
+                                </div> -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+				<hr class="cox">
+                  <div class="foq">
+						<h1 class="centrerText" style="color:#f4c613;">Foire aux questions<img alt="" src="images/faq.jpg" width="200px" height="120px"> </h1>
+						<br>
+						
+						     <table class="table table-bordered">
+        <thead>
+          <tr>
+            
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Giraud</td>
+            <td>Pierre</td>
+            <td>28</td>
+          </tr>
+          <tr>
+            <td>Durand</td>
+            <td>Victor</td>
+            <td>26</td>
+          </tr>
+          <tr>
+            <td>Joly</td>
+            <td>Julia</td>
+            <td>27</td>
+          </tr>
+        </tbody>
+      </table>
+						<!-- <button class="accordion">Comment trouver son aide-ménagère sur CleanPro ?</button>
+						<div class="panel">
+						  <p>Entrez votre code postal puis choisissez la date, la fréquence de vos prestations et vos besoins particuliers (du repassage par exemple). Ensuite, vous serez invité à sélectionner ou désélectionner les profils de prestataires parmi un panel d'aide-ménagers disponibles
+						   au moment que vous aurez choisi et dans votre quartier. Ces prestataires peuvent choisir eux-mêmes leurs tarifs en fonction de leurs
+						    performances. Ainsi vous pouvez les choisir en fonction de leur tarif et des avis des clients précédents.
+							Une fois votre sélection faites, un texto sera envoyé à tous ceux que vous avez retenus et le premier à accepter sera votre nouvel aide-ménager ! Pour maximiser
+							 les chances de trouver le bon, nous vous conseillons de laisser environ six aides-ménagères dans votre sélection. Vous recevrez ensuite un
+							  e-mail de confirmation avec vos identifiants et toutes les informations sur votre nouveau prestataire.</p>
+						</div>
+						
+						<button class="accordion">Combien coûte une heure de ménage via CleanPro?</button>
+						<div class="panel">
+						  <p>Sur CleanPro, chaque prestataire est libre de fixer ses tarifs. En effet, il nous tient à coeur que chacune des aides-ménagères soit rémunérées en fonction de la qualité de son travail et des retours clients. Lors de votre réservation, vous aurez donc accès à une large gamme de prix en fonctions de vos besoins.
+						  .</p>
+						</div>
+						
+						<button class="accordion">J'ai réservé des heures de ménage en ligne - que se passe-t-il ensuite ?</button>
+						<div class="panel">
+						  <p>Vous recevez une notification par SMS et e-mail dès qu’un intervenant accepte votre demande de réservation. Le temps de réponse à votre demande de réservation varie en fonction des profils sélectionnés ainsi que des détails de votre réservation (lieu d’habitation, créneau horaire). Cela ne prend généralement pas plus de quelques heures. Si les profils sélectionnés ne répondent pas favorablement à votre demande, notre Service Clients reviendra vers vous pour connaître vos disponibilités et vous aider à trouver l’aide-ménagère qui répondra au mieux à vos besoins.</p>
+						</div>
+						<button class="accordion">Comment puis-je me préparer pour la première prestation ?</button>
+						<div class="panel">
+						  <p>N’hésitez pas à prendre contact avec votre aide-ménagère sur le chat de l’application afin d’anticiper votre première rencontre. Communiquez-lui vos préférences et priorités en terme de ménage pour un résultat de ménage optimal.</p>
+						</div>
+						<button class="accordion">Dois-je fournir des produits de nettoyage ?</button>
+						<div class="panel">
+						  <p>Oui, veuillez fournir les produits de nettoyage nécessaires à votre domicile, et vérifier que votre matériel fonctionne (aspirateur, serpillère etc). N’hésitez pas à demander conseil à votre aide-ménagère si vous n'êtes pas certain de ce dont vous avez besoin.</p>
+						</div>
+						<button class="accordion">Dois-je être présent pendant le nettoyage ?</button>
+						<div class="panel">
+						  <p>Lors de la première prestation, nous vous recommandons d’être présent afin de présenter votre domicile à l’aide-ménagère, lui montrer où se situe votre matériel de ménage ainsi que pour échanger de vive voix sur vos priorités. Pour les prestations suivantes, vous pouvez donner un double des clefs à votre aide-ménagère afin qu’elle puisse effectuer ses missions en votre absence. À défaut de pouvoir laisser un double de vos clefs et si vous êtes dans l’incapacité de pouvoir ouvrir à votre intervenant, confiez vos clefs à une personne de confiance qui pourra le faire à votre place. Ne laissez jamais vos clefs dans votre boîte aux lettres afin d’éviter tout risque de vol.</p>
+						</div>
+						<button class="accordion">J’ai perdu mon identifiant ou mon mot de passe, comment puis-je les récupérer?</button>
+						<div class="panel">
+						  <p>Si vous avez oublié votre mot de passe, il suffit d´entrer à nouveau votre adresse e-mail et nous vous enverrons un nouveau mot de passe.</p>
+						</div> -->
+					</div>
+                </div>
+    </section>
+    </div>

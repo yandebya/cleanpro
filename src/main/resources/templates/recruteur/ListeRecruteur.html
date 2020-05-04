@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>utilisateur</title>
+</head>
+
+<body class="nav-md">
+
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+	 <div class="page-title">
+              <div class="title_left">
+                <h3>LISTE TOTALE DES RECRUTEUR</h3>
+              </div>
+
+              
+              
+            </div>
+		<div class="x_panel">
+		
+		 <div class="x_title">
+                    <h2>LISTE DES RECRUTEURS <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                  <button class="btn btn-success nBtn  fa fa-plus"> Ajouter</button>
+                  
+                   <table id="datatable" class="table table-striped table-bordered tab">
+                   <thead>
+						<tr>
+							<th>N</th><th>NOM</th><th>PRENOM</th><th>DATE NAISSANCE</th><th>EMAIL</th><th>TELEPHONE</th><th>Action</th>
+							
+						</tr>
+						</thead>
+						  <tbody>
+							<tr th:each=" recruteur:${recruteur}">
+								<td th:text="${recruteur.id_utilisateur}"></td>
+								<td th:text="${recruteur.nom_utilisateur}"></td>
+								<td th:text="${recruteur.prenom_utilisateur}"></td>
+								<td th:text="${recruteur.age_utilisateur}"></td>
+								<!-- <td><img th:src="@{getPhoto_utilisateur(id_utilisateur=${client.id_utilisateur})}" width="100" height="100"/></td> -->
+								<td th:text="${recruteur.email_utilisateur}"></td>
+								<td th:text="${recruteur.telephone_utilisateur}"></td>
+								
+								      <td>
+							<a th:href="@{editerRecruteur(id_utilisateur=${utilisateur.id_utilisateur})}" class="btn btn-info btn-xs eBtn"><i class="fa fa-pencil"></i> </a>
+                            <a th:href="@{detailRecruteur(id_utilisateur=${recruteur.id_utilisateur})}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>  </a>
+                            <a th:href="@{activerRecruteur(id_utilisateur=${recruteur.id_utilisateur})}" class="btn btn-danger btn-xs"><i class="fa fa-lock "></i>  </a>
+                            <a th:href="@{supprimerRecruteur(id_utilisateur=${recruteur.id_utilisateur})}"class="btn btn-danger btn-xs delBtn"><i class="fa fa-trash-o"></i></a>
+                          </td>
+								
+						    </tr>
+						 
+						
+						</table>
+					 
+						   
+                   </div>
+                  
+                  
+                  <div class="myForm x_content">
+							<form th:action="@{creationRecruteur}" method="post" enctype="multipart/form-data">
+							  
+							   <div class="modal fade" role="dialog" id="exampleModal"
+									tabindex="2" aria-labelledby="exampleModalLabel">
+									<div class="modal-dialog" role="document">
+											
+							    <div class="panel panel-primary">
+                              <div class="panel-heading centrer"><h2> <img src="img/logo/logo.png" alt="logo" width="40" height="40"> Ceation d'un compte Recruteur </h2></div>
+                              <div class="panel-body">
+												<p id="messager"></p>
+												<br>
+                                <div class="row">
+											
+                                            <input type="hidden"  class="form-control cc" id="id_utilisateur" name="id_utilisateur" >
+                                   
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text"class="form-control has-feedback-left form-control cc" id="nom_utilisateur" name="nom_utilisateur" placeholder="nom"required="required" >
+                                   		<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text"   class="form-control cc" id="prenom_utilisateur" placeholder="prenom " name="prenom_utilisateur" required="required" >
+                                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="email"  class="form-control has-feedback-left cc" id="email_utilisateur" name="email_utilisateur"  placeholder="email">
+                                      <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control cc" id="telephone_utilisateur" name="telephone_utilisateur" placeholder="telephone">
+                                       <span class="fa fa-phone form-control-feedback right " aria-hidden="true"></span>
+                                        </div>
+                                    </div>
+								 <div class="col-md-6 col-sm-6">Age
+                                        <div class="form-group">
+                                            <input type="date" class="form-control cc" id="age_utilisateur" name="age_utilisateur">
+                                        </div>
+                                    </div>
+                                   
+									<div class="col-md-6 col-sm-6">Sexe
+									 <div class="form-group">
+												<select name="sexe_utilisateur" id="gender" class="form-control cc">
+													<option value="M">Masculin</option>
+													<option value="F">Feminin</option>
+												</select>
+										</div>
+											
+
+							</div>
+							
+                                     <div class="hid">
+                                     	 <input type="file" id="picture" name="picture" >
+                                     </div>      
+                                        
+							<div class="col-md-12 col-sm-12 ">
+                                        <div class="form-group">
+                                            <input type="text"  class="form-control cc" id="username" name="username" placeholder="login">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="password"  class="form-control cc" id="password" name="password" placeholder="mot de passe">
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <!-- <div class="form-group">
+                                    <textarea class="form-control" id="message" placeholder="Message"></textarea>
+                                </div> -->
+
+                                 <div class="ln_solid"></div>
+                                
+									<div class="form-group">
+										<div class="col-md-6 col-md-offset-3">
+												<button type="submit" class="btn btn-secondary" data-dismiss="modal" >fermer</button>
+											<button type="submit" class="btn btn-success" id="valider">valider</button>
+										</div>
+									</div>
+									
+									
+							   </div>
+							  </div>
+							 </div>
+							</div>
+                           </form>
+						  </div>
+                  
+				<div class="myForm">
+							<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">suppresion</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p class="alert alert-danger">Voulez-vous vraiment supprimer? </p>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-secondary" data-dismiss="modal" >annuler</button>
+											<a href=""  class="btn btn-danger" id="delRef">supprimer</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+
+</html>

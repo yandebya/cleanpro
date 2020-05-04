@@ -1,0 +1,119 @@
+ 
+ 
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Medico Appointment Form Flat Responsive widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Doctor Appointment Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- font files -->
+<link href="//fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
+<!-- /font files -->
+<!-- css files -->
+<link href="css/css/css/style.css" rel='stylesheet' type='text/css' media="all" />
+<!-- /css files -->
+<link href="css/css/css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons-css-file -->
+
+<link href="css/css/css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<div class="w3-banner-main">
+		<div class="center-container">
+		<div class="inscriptions" >
+			<a th:href="@{indexSite}">  <img alt="" src="images/icn41.png" width="50px" height="50px"></a>
+		</div>
+			<h1 class="header-w3ls ">Creation du compte Prestataire</h1>
+			
+			<div class="content-top">
+				<div class="content-w3ls">
+				<form th:action="@{/inscriptionPrestataire}" method="post" enctype="multipart/form-data">
+					<div class="form-w3ls">
+						  <div class="hid">
+                                     	 <input type="file" name="picture" >
+                                     </div> 
+							<div class="content-wthree1">
+								<div class="grid-agileits1">
+									<div class="form-control"> 
+										<label class="header">Nom <span>*</span></label>
+										<input type="text" th:field="${prestataire.nom_utilisateur}"  id="name" name="name" placeholder="" title="nom" required="">
+									</div>
+									
+									<div class="form-control">	
+										<label class="header">Prenom<span>*</span></label>
+										<input type="text" id="name" th:field="${prestataire.prenom_utilisateur}" name="phone number" placeholder="" title="Please enter your Phone Number" required="">
+									</div>
+									<div class="form-control">	
+										<label class="header">Numero telephone <span>*</span></label>
+										<input type="text" id="name" th:field="${prestataire.telephone_utilisateur}" name="phone number" placeholder="" title="Please enter your Phone Number" required="">
+									</div>
+									<div class="form-control">	
+										<label class="header">Login <span>*</span></label>
+										<input type="text" id="name" th:field="${prestataire.username}" name="phone number" placeholder="" title="Please enter your Phone Number" required="">
+									</div>
+									<div class="form-control">	
+										<label class="header">Mot de passe<span>*</span></label>
+										<input type="text" id="name" th:field="${prestataire.password}" name="phone number" placeholder="" title="Please enter your Phone Number" required="">
+									</div>
+									
+
+
+
+								</div>
+								
+							</div>
+							
+					</div>
+					
+					<div class="form-w3ls-1">
+					              <img alt="" src="images/icn41.png">
+						
+							
+					</div>
+					 <div class="form-control Insurance"> 
+									<div class="clear"></div>
+						</div> 
+									 <div class="form-w3ls-1"><input type="submit" value="Valider"></div>
+									
+
+									</form>
+					<div class="clear"></div>
+				</div>
+				
+			</div>	
+				
+				<p class="copyright">© 2017 Medico Appointment Form. All Rights Reserved | Design by <a th:href="@{indexSite}" >CleanPro</a></p>
+		</div>
+	</div>
+
+<!-- Calendar -->
+				<link rel="stylesheet" href="css/css/css/jquery-ui.css" />
+				<script src="js/jquery-ui.js"></script>
+				  <script>
+						  $(function() {
+							$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
+						  });
+						  
+				  </script>
+			<!-- //Calendar -->
+			<script type="text/javascript" src="js/wickedpicker.js"></script>
+			<script type="text/javascript">
+				$('.timepicker').wickedpicker({twentyFour: false});
+			</script>
+
+
+</body>
+</html>
+
+ 
+ 
+ 

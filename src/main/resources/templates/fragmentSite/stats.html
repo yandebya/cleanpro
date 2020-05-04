@@ -1,0 +1,72 @@
+<meta charset="utf-8"/>
+ <div data-th-fragment="fStats" xmlns:th="http://www.thymeleaf.org">
+<section id="stats">
+
+        <div class="content-box-md">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-12 wow slideInLeft">
+
+                        <div class="vertical-heading">
+                          
+                            <h2>Nous livrons<br><strong>D'excellents</strong> services</h2>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row wow fadeInUp" data-wow-duration="2s">
+
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+
+                        <!-- Stats Item 01 -->
+                        <div class="stats-item text-center">
+                            <i class="fa fa-bar-chart"></i>
+                            <h3 class="counter">0</h3>
+                            <p>Mois d'expérience</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+
+                        <!-- Stats Item 02 -->
+                        <div class="stats-item text-center">
+                            <i class="fa fa-codepen"></i>
+                            <h3 class="counter">46</h3>
+                            <p> foyers nettoyés</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+
+                        <!-- Stats Item 03 -->
+                        <div class="stats-item text-center">
+                            <i class="fa fa-trophy"></i>
+                            <h3 class="counter" ><span th:text="${nombreVille}"></span></h3>
+                            <p>villes couvertes</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+
+                        <!-- Stats Item 04 -->
+                        <div class="stats-item text-center">
+                            <i class="fa fa-users"></i>
+                            <h3 class="counter"><span th:text="${nombreAc}"></span></h3>
+                            <p>clients satisfaits</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    </div>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layoutEnregistrement}"
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<head>
+<title>utilisateurp</title>
+</head>
+
+<body class="nav-mdp " >
+
+	<!-- page content -->
+
+	<div class="right_col "  role="main" data-layout-fragment="content">
+	<div class="row">
+	<div class="col-md-4 col-xs-12">
+               
+                  <div class="x_panel_enregistrement">
+                    <br />
+                    <form class="form-horizontal form-label-left">
+                    
+				
+                     </form>
+                  </div>
+                </div>
+              <div class="col-md-6 col-xs-12">
+                <div class="x_panel_enregistrement">
+                  <div class="x_title">
+                    <h2>POSTULER</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                     
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form th:action="@{postulerPrestataire}" method="post" enctype="multipart/form-data"
+					 class="form-horizontal form-label-left input_mask">
+
+                   
+                        <input type="hidden" class="form-control cc" id="inputSuccess3" placeholder="Prenom" required="required"
+                        th:field="${prestataire.id_utilisateur}">
+                    
+                     <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-right cc" id="inputSuccess4" placeholder="Email"
+                        th:field="${prestataire.email_utilisateur}">
+                        <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="inputSuccess5" placeholder="Telephone" required="required"
+                         th:field="${prestataire.telephone_utilisateur}" value="s">
+                        <span class="fa fa-phone form-control-feedback right " aria-hidden="true"></span>
+                      </div>
+                    
+                 
+                    
+						<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						<label>code Postal</label>
+                          <input type="text" class="form-control cc" id="inputSuccess3" placeholder="Code Postal" required="required"
+                          th:field="${prestataire.code_postal_utilisateur}">
+                          <span class="fa fa-address-card form-control-feedback right" aria-hidden="true"></span>
+                      </div >
+						
+                     <div class="col-md-6 col-sm-6 col-xs-12 form-group ">
+                     <label>date naissance</label>
+                          <input type="date" class="form-control cc"  placeholder="Date de Naissance" required="required"
+                           th:field="${prestataire.age_utilisateur}">
+                          
+                      </div>
+                      
+                       <div class="item form-group col-md-12 col-sm-12 col-xs-12">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Genre <span class="required">*</span>
+									</label>
+
+									<div class="col-md-8 col-sm-8 col-xs-12" required="required">
+									<span class="c">
+										<input type="radio" th:field="${prestataire.sexe_utilisateur}" value="H" checked="checked" />
+										 <label>MASCULIN</label> 
+									</span>
+									<span class="c">
+										<input type="radio" th:field="${prestataire.sexe_utilisateur}" value="F" />
+										 <label> FEMININ</label>
+									</span>
+									</div>
+								</div>
+								
+								 <div class="form-group">
+                      				 <div class="col-md-12 col-sm-12 col-xs-12">
+                      				 <label>photo </label>
+                       				  	 <input type="file" name="picture" class="form-control cc"  placeholder="photo" required="required">
+                        			</div>
+                     			 </div>
+								
+                      
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                          <select th:field="${ville.id_ville}" id="id_ville"
+                         		 class="date-picker form-control col-md-12 col-xs-12 cc">
+                         		 
+                          	<option 
+		                          	th:each="ville:${listeVille}"
+		                          	th:value="${ville.id_ville}"
+		                          	th:text="${ville.libelle_ville}"/>
+                          </select>
+                      </div>
+						
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" id="id_quartier">
+                        <select  class="date-picker form-control col-md-12 col-xs-12 cc">
+                          	<option>-choisissez un quartier-</option>
+                          </select>
+                      </div>
+						
+						  <div class="form-group">
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                         <textarea class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="votre experience proffessionnel" required="required"
+											type="text" th:field="${prestataire.experience_proffessionel_pres}">
+										</textarea>
+                        </div>
+                      </div>
+						
+						<div class="col-md-12 col-sm-12  col-xs-12 form-group has-feedback">
+						<label>categorie</label>
+                         <select th:field="${cs.id_categorieServivce}" 
+                         		 class="date-picker form-control col-md-12 col-xs-12 cc">
+                          	<option 
+		                          	th:each="cat:${categorieService}"
+		                          	th:value="${cat.id_categorieServivce}"
+		                          	th:text="${cat.libelle_categorie}"/>
+                          </select>
+                      </div>
+					 
+					 <div class="col-md-12 col-sm-12  col-xs-12 form-group has-feedback">
+						<label>Nationalite</label>
+                         <select th:field="${nationalite.id_nationalite}" 
+                         		 class="date-picker form-control col-md-12 col-xs-12 cc">
+                          	<option 
+		                          	th:each="cat:${listeNationalite}"
+		                          	th:value="${cat.id_nationalite}"
+		                          	th:text="${cat.libelle_nationalite}"/>
+                          </select>
+                      </div>
+					 
+					<div class="form-group">
+                      				 <div class="col-md-12 col-sm-12 col-xs-12">
+                      				 <label>Photo de Piece d'identite </label>
+                       				  	 <input type="file" name="picturePiece" class="form-control cc"  placeholder="photo Piece" required="required">
+                        			</div>
+                     			 </div>
+                     			 <div class="form-group">
+                      				 <div class="col-md-12 col-sm-12 col-xs-12">
+                      				 <label>Photo casier judiciaire </label>
+                       				  	 <input type="file" name="pictureCasierJudiciaire" class="form-control cc"  placeholder="photo casier judiciaire" required="required">
+                        			</div>
+                     			 </div>
+                      <div class="form-group">
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                         <textarea class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="votre motivation en quelque ligne" required="required"
+											type="text" th:field="${prestataire.motivation_pres}">
+										</textarea>
+                        </div>
+                      </div>
+                      
+                     
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+     
+						   <button class="btn btn-primary" type="reset">Annuler</button>
+                          <button type="submit" class="btn btn-success">Ajouter</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+
+              
+              </div>
+
+              
+              </div>
+            </div> 
+	<!-- /page content -->
+</body>
+</html>

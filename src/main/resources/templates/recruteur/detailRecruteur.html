@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<title>profil recr</title>
+</head>
+<div class="clearfix"></div>
+<body class="nav-md">
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+
+       
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>INFORMATION DETAILLE SUR LE RECRUTEUR <span th:text="${nombreRecruteur}"></span></h3>
+              </div>
+
+            </div>
+            
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>User Report <small>Activity report</small></h2>
+                   <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul> 
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                      <div class="profile_img">
+                        <div id="crop-avatar">
+                          <!-- Current avatar -->
+                       <a class="fancybox " th:href="@{getPhoto_utilisateur(photo_utilisateur=${utilisateur.photo_utilisateur})}">
+                       <img style="box-shadow: 5px 5px 10px silver;margin-left: 7px;border-radius: 5%" class="img-cifrcle " th:src="@{getPhoto_utilisateur(photo_utilisateur=${utilisateur.photo_utilisateur})}"width="200" height="250"   alt=""></a>
+                      
+                        </div>
+                      </div>
+                   
+                	
+                
+				
+
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+
+                      <!-- start of user-activity-graph -->
+                     
+                      <!-- end of user-activity-graph -->
+
+                      <!-- <div class="" role="tabpanel" data-example-id="togglable-tabs">
+ 							   	 <span th:hidden="${recruteur.id_utilisateur}"></span>
+                    			 <h4>Nom: <span th:text="${recruteur.nom_utilisateur}"></span></h4>
+                				 <h4>Prenom: <span th:text="${recruteur.prenom_utilisateur}"></span></h4>
+                				  <h4>Sexe: <span th:text="${recruteur.sexe_utilisateur}"></span></h4>
+                				  <h4>Date Naissance: <span th:text="${recruteur.age_utilisateur}"></span></h4>
+                				 <h4>Email: <span th:text="${recruteur.email_utilisateur}"></span></h4>
+                				 <h4>Telephone: <span th:text="${recruteur.telephone_utilisateur}"></span></h4>
+                				 <h4>Date d'inscription: <span th:text="${recruteur.date_inscription}"></span></h4>
+                				
+                				 
+                	
+                      </div> -->
+                      <table class="data table table-striped no-margin" style="background-color:#dff4ff; font-size: 20px;  /* background-image: url(../images/exigence-de-qualite-pour-l-eau-du-robinet.jpg); */">
+                              
+                              <tbody>
+                                <tr>
+                                  
+                                  <td>Nom</td>
+                                  <td  th:text="${recruteur.nom_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Prenom</td>
+                                  <td  th:text="${recruteur.prenom_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                  
+                                  <td>Sexe</td>
+                                  <td  th:text="${recruteur.sexe_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                  <td>Date de naissance</td>
+                                  <td  th:text="${recruteur.age_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Telephone</td>
+                                  <td  th:text="${recruteur.telephone_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Email</td>
+                                  <td  th:text="${recruteur.email_utilisateur}"></td>
+                                </tr>
+                                
+                              <tr>
+                                
+                                  <td>Date d'inscription</td>
+                                  <td  th:text="${recruteur.date_inscription}"></td>
+                                </tr>
+                               <tr>
+                                
+                                  <td>Inscrit par</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                              
+                            </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+	<!-- /page content -->
+</body>
+</html>

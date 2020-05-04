@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>service</title>
+<meta charset="utf-8">
+</head>
+
+<body class="nav-md">
+
+	<!-- page content -->
+	    <div class="right_col" role="main" data-layout-fragment="content">
+		   
+         
+        <!-- page content -->
+        
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Invoice <small>Some examples to get you started</small></h3>
+              </div>
+
+            
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Invoice Design <small>Sample user invoice design</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <section class="content invoice">
+                      <!-- title row -->
+                      <div class="row">
+                       
+                        <!-- /.col -->
+                      </div>
+                      <!-- info row -->
+                      <div class="row invoice-info">
+                        
+                        <!-- /.col -->
+                       <!--  <div class="col-sm-4 invoice-col">
+                          Prestatire:
+                          <address th:each=" r: ${reserv}">
+                                          <strong th:text="${r.prestataire.nom_utilisateur}"></strong>
+                                         <span th:text="${r.prestataire.prenom_utilisateur}"></span>
+                                         <br>                                           
+                                         <span>Nationnalité: </span> <span th:text="${r.prestataire.nationalite.libelle_nationalite}"></span>
+                                      </address>
+                        </div> -->
+                        <!-- /.col -->
+                        <div class="col-sm-4 invoice-col">
+                          <b>Invoice #007612</b>
+                          <br>
+                          <br>
+                          <b>Order ID:</b> 4F3S8J
+                          <br>
+                          <b>Payment Due:</b> 2/22/2014
+                          <br>
+                          <b>Account:</b> 968-34567
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                      <!-- /.row -->
+
+                      <!-- Table row -->
+                      <div class="row">
+                        <div class="col-xs-12 table">
+                          <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>Numero Reservation</th>
+                                <th>date de service</th>
+                          		 <th>Ville</th>
+                          		  <th>Quartier</th>
+                                <th>Categorie de reservation</th>
+                                <th style="width: 59%">Prestataire</th>
+                                <th> Date de reservation</th>
+                                <th>Accepter/ Annuler</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr th:each=" r: ${reserv}">
+                                <td th:text="${r.id_reservation}"></td>
+                                <td><span  class="badge" th:text="${r.date_debut}"></span> <span  class="badge" th:text="${r.date_fin}"></span></td>
+                                <td th:text="${r.ville.libelle_ville}"></td>
+                                 <td th:text="${r.quartier.libelle_quartier}"></td>
+                                 <td th:text="${r.categorieService.libelle_categorie}"></td>
+                                  <td> <span  th:text="${r.utilisateur.nom_utilisateur}"></span> <span  th:text="${r.prestataire.prenom_utilisateur}"></span></td>
+                               	<td th:text="${r.dateReservation}"></td>
+                               	<td> <a title="bloquer/debloquer"  th:href="@{activerReservation(id_reservation=${r.id_reservation})}" class="btn btn-success btn-xs blocBtn"><i class="fa fa-lock danger btn-xs"></i>/<i class="fa fa-unlock btn-xs" aria-hidden="true"></i> </a></td>
+                              </tr>
+                   
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                      <!-- /.row -->
+
+                      
+                      <!-- /.row -->
+
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+		
+	<!-- /page content -->
+</body>
+</html>

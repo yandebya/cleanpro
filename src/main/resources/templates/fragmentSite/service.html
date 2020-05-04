@@ -1,0 +1,221 @@
+
+<meta charset="utf-8" >
+ <div data-th-fragment="fService" xmlns:th="http://www.thymeleaf.org">
+ <!-- Start Featured Tours -->
+ 
+		<section id="services">
+		
+	<!-- 	<div class="servce">
+		              <div class=" centrerText horizontal-heading">   
+                           
+                            <h1 class="titre_fonctionnement">Catégories de prestations</h1>	 
+                        </div>
+		</div> -->
+		
+	<!-- <img alt="" src="images/cleanlines.png" width="1380px" height="500px" style="">  -->
+		  <div id="fonctionnement-01">
+
+            <div class="content-box-lg_ser">
+
+                <div class="container">
+
+                    <div class="row">
+					<div class="col-md-12 text-center wow slideInDown">
+                        <div class="horizontal-heading">
+                            
+                            <h2>Services</h2>
+                            <h2>Catégories de prestations</h2>
+							<p class="mu-title-content">Les categorie de services disponibles sur notre plateforme.</p>
+                            
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+         <div id="services-02">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-featured-tours-area">
+							
+							<!-- Start Featured Tours content -->
+							<div class="mu-featured-tours-content">
+							
+								<div class="row" data-wow-duration="2s">
+									
+                       <div >
+                       
+                       
+									<div class="col-md-4 case" th:each=" categorieService: ${ListeCategorieParServiceSite}">
+										<div class="mu-featured-tours-single">
+											<img  th:src="@{getPhoto_categorie(photo_categorie=${categorieService.photo_categorie})}"width="359px" height="230px">
+											<!-- <img src="img/services/service-tab-img-01.jpg" width="352px" height="230px" alt="img"> -->
+											<div class="mu-featured-tours-single-info">
+												<h3 th:text="${categorieService.libelle_categorie}">></h3>
+												
+												<span class="mu-price-tag"></span>
+												<p th:text="${categorieService.description_categorie}"></p>
+											    <div id="services-02-btn-01">
+                                          			  <a class="btn btn-general btn-yellow"
+													    	th:href="@{ListeCategorieParServiceSite(id_CategorieService=${categorieService.id_categorieServivce})}" 
+														    title="Get In Touch" role="button">voir service</a>
+                                                </div>
+											</div>
+										</div>
+									</div>
+</div>							</div>
+							</div>
+							<!-- End Featured Tours content -->
+						</div><br>
+					</div>
+				</div>
+			</div>
+		   </div>
+		   <div class="basSer">
+		   <div class=" owl-carousel owl-theme" id="team-members" >
+		   
+				<div id="team-members "  class="col-md-8 case" th:each=" categorieService: ${ListeCategorieParServiceSite}">
+				<div class="basSer2" th:text="${categorieService.libelle_categorie}"></div>
+												
+				</div>
+		  <!--  <img alt="" src="images/chaise2.jpg" width="100%" height="350px" style=""> -->
+		   </div>
+		</div>
+		</section>
+		<!-- End Featured Tours -->
+<!-- <section id="services">
+
+        Services 01
+        <div id="fonctionnement-01">
+
+            <div class="content-box-lg">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        About Left Side
+                        
+                                <div >
+                                    <h2 class="centrerText"><strong>SERVICES</strong></h2>
+                                </div>
+                        About Right Side
+                       
+
+                    </div>
+
+                    About Bottom
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+        Services 01 Ends
+
+        Services 02
+        <div id="services-02">
+
+            <div class="content-box-md">
+
+                <div id="services-tabs" th:each=" categorieService: ${ListeCategorieParServiceSite}">
+
+                    <ul class="text-center" >
+                        <li><a th:text="${categorieService.libelle_categorie}"></a></li>
+                      
+                    </ul>
+
+                    Service Tab 01
+                    <div id="service-tab-1" class="service-tab">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                 <img  th:src="@{getPhoto_categorie(photo_categorie=${categorieService.photo_categorie})}"width="550px" height="189px">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="tab-bg">
+                                      
+                                        <p th:text="${categorieService.description_categorie}"></p>
+
+                                        <div id="services-02-btn-01">
+                                           <a th:href="@{ListeCategorieParServiceSite(id_CategorieService=${categorieService.id_categorieServivce})}" 
+									        title="Voir"class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>  
+											services
+										</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    Service Tab 02
+                    
+                    Service Tab 04
+                    
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div id="services-02" th:each=" categorieService: ${ListeCategorieParServiceSite}">
+
+            <div class="content-box-md">
+
+                <div id="services-tabs" >
+
+                    <ul class="text-center">
+                        <li><a href="#service-tab-1" th:text="${categorieService.libelle_categorie}"></a></li>
+                     
+                    </ul>
+
+                    Service Tab 01
+                    <div id="service-tab-1" class="service-tab">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="img/services/service-tab-img-01.jpg" alt="creativity">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="tab-bg">
+                                        <h2>01</h2>
+                                        <h3>.</h3>
+                                        <p  th:text="${categorieService.description_categorie}">.</p>
+
+                                        <div id="services-02-btn-01">
+                                            <a class="btn btn-general btn-yellow"
+                                             th:href="@{ListeCategorieParServiceSite(id_CategorieService=${categorieService.id_categorieServivce})}"
+                                             title="Get In Touch" role="button">voir services</a>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div> 
+        
+        Services 02 Ends
+         <div id="services-02">
+
+            <div class="content-box-md">
+        
+         </div>
+         </div>
+    </section> -->
+    </div>

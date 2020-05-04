@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>client</title>
+</head>
+
+<body class="nav-md">
+
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+	 <div class="page-title">
+              <div class="title_left">
+                <h3>LISTE TOTALE DES CLIENTS</h3>
+              </div>
+
+               <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <form th:action="@{listeClientPage}" method="get">
+                 <div class="input-group">
+                    <input type="text" name="motCle" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                              <button class="btn btn-primary" type="submit">chercher!</button>
+                             
+                          </span>
+                  </div>
+                   </form>
+                </div>
+              </div>
+              
+            </div>
+		<div class="x_panel">
+		
+		 <div class="x_title">
+                    <h2>LISTE DES CLIENTS <small>CLIENT</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+								<ul class="nav nav-pills">
+									<li th:each="p:${pages}" th:class="${p==pageCourant}?active:''">
+										<a th:text="${p}" th:href="@{/listeClientPage(page=${p})}"></a>
+									</li>
+								</ul>
+								
+                      </div>
+                      
+                   <div class="clearfix"></div>
+                     <div class="col-md-4 col-sm-4 col-xs-12 profile_details tab" th:each=" client: ${client}">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i>client</i></h4>
+                            <div class="left col-xs-7">
+                              <h4>Nom: <span th:text="${client.nom_utilisateur}"></span></h4>
+                              <h4>Prenom: <span th:text="${client.prenom_utilisateur}"></span></h4> 
+                              <h4>Sexe: <span th:text="${client.sexe_utilisateur}"></span></h4>
+                              <ul class="list-unstyled">
+                                <h5> <li><i class="fa fa-building" > <span th:text="${client.age_utilisateur}"></span></i>  </li></h5>
+                               <h5><li><i class="fa fa-phone" > <span th:text="${client.telephone_utilisateur}"></span></i> </li></h5>
+                             	<li><i class="fa fa-envelope-o"> <span th:text="${client.email_utilisateur}"></span></i></li>
+                              </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                             <div class="photo">
+                             <a class="fancybox " th:href="@{getPhoto_utilisateur(id_utilisateur=${client.id_utilisateur})}"><img class="img-circle"th:src="@{getPhoto_utilisateur(id_utilisateur=${client.id_utilisateur})}"width="100" height="100"   alt=""></a>
+                             </div>
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                              <p class="ratings">
+                                <a></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star-o"></span></a>
+                              </p>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 emphasis">
+                            <a th:href="@{supprimerClient(id_utilisateur=${client.id_utilisateur})}"
+											class="btn btn-danger btn-xs delBtn">
+											<i class="fa fa-trash-o"></i>supprimer</a>|
+                              <a type="button" class="btn btn-primary btn-xs">
+                                <i class="fa fa-user"> </i> View Profile
+                              </a>
+                            </div>
+                            <div class="myForm">
+							<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">suppresion</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p class="alert alert-danger">Voulez-vous vraiment supprimer? </p>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-secondary" data-dismiss="modal" >annuler</button>
+											<a href=""  class="btn btn-danger" id="delRef">supprimer</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                          </div>
+                        </div>
+                      </div>
+                         
+                   </div>
+                   
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

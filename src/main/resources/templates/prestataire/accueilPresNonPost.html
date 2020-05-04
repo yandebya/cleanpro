@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layoutEnregistrement}"
+	xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="utf-8"/>
+<title>accueil pres non post </title>
+</head>
+
+<body class="nav-mdps">
+<div class="w3-banner-main">
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+		<div class="x_panel">
+		
+		
+		  			
+		</div>
+		
+	</div>
+	<!-- /page content -->
+	
+	<div class="right_col "  role="main" data-layout-fragment="content">
+	<div class="row">
+	<div class="col-md-4 col-xs-12">
+               
+                  <div class="x_panel_enregistrement">
+                    <br />
+                   
+				
+		 <div class="centrer critere">
+		 <img src="../images/fond-grandmenage_03.png" width="294" height="305"  />
+		 <img src="../images/house-cleaning-menagegopro-service.png" width="294" height="205"  />
+		
+		 </div>
+		 
+		
+                  
+                     
+                  </div>
+                </div>
+              <div class="col-md-6 col-xs-12 cadrePres">
+                <div class="x_panel_enregistrement">
+                  <div class="x_title x_titlesp ">
+                   
+                    <ul class="nav navbar-right panel_toolbox">
+                     
+                    </ul>
+                    <div class="clearfix"></div>
+                     <h3 class="centrer critere cadrePresSpan"><span  th:text="${utilisateur.nom_utilisateur}"> </span> <span class="cadrePresSpan"  th:text="${utilisateur.prenom_utilisateur}"> </span></h3>
+                  </div>
+                  <div class="x_content">
+                    <div class="critere"><h2 class="centrer"><i class="fa fa-paint-brush"></i>  POSTULER</h2>
+		                    <p>Cliquez sur "Apply to this Vacancy" (Postuler pour ce Poste) après avoir examiné les
+								informations sur la page "Détails du poste" (Par exemple : Responsabilités,
+								Qualifications et Evaluations).
+						 </p>
+					 </div>
+					 <div class="critere"><h2 class="centrer"><i class="fa fa-paint-brush"></i>  POSTULER</h2>
+		                    <p>Cliquez sur "Apply to this Vacancy" (Postuler pour ce Poste) après avoir examiné les
+								informations sur la page "Détails du poste" (Par exemple : Responsabilités,
+								Qualifications et Evaluations).
+								 </p>
+					 </div>
+			
+					 <div class="critere"><h2 class="centrer"><i class="fa fa-paint-brush"></i>  POSTULER</h2>
+		                    <p>Cliquez sur "Apply to this Vacancy" (Postuler pour ce Poste) après avoir examiné les
+								informations sur la page "Détails du poste" (Par exemple : Responsabilités,
+								Qualifications et Evaluations).
+								 </p>
+					 </div>
+                     <form class="form-horizontal form-label-left">
+					    <div class="centrer"> 
+		                <a th:href="@{postulerPrestataire(id_utilisateur=${utilisateur.id_utilisateur})}"
+						class="btn btn-success nBtn"><i class="fa fa-edit m-right-xs"></i> postuler maintenant</a></div>
+                     </form>
+               
+                    </div>
+                </div>
+
+              
+              </div>
+
+              
+              </div>
+              
+              
+              <div class="myForm x_content">
+							<form class="form-horizontal form-label-left formulaire" th:action="@{postulerPrestataire}"
+								 method="post" enctype="multipart/form-data">
+								  <div class="modal fade" role="dialog" id="exampleModal"
+									tabindex="2" aria-labelledby="exampleModalLabel">
+									<div class="modal-dialog" role="document">
+											
+							    <div class="panel panel-primary">
+                              <div class="panel-heading centrer"><h2>Ceation d'un compte Recruteur</h2></div>
+                              <div class="panel-body">
+												<p id="messager"></p>
+												<br>
+                          
+												<div>
+						<input type="hidden" class="form-control cc" id="id_utilisateur" name="id_utilisateur" placeholder="Prenom" >
+                    
+                     <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-right cc" id="email_utilisateur" name="email_utilisateur" placeholder="Email">
+                        <!-- <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span> -->
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="telephone_utilisateur" name="telephone_utilisateur" placeholder="Telephone" required="required"
+                         value="s">
+                        <!-- <span class="fa fa-phone form-control-feedback right " aria-hidden="true"></span> -->
+                      </div>
+                    
+                 
+                    
+						<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						
+                          <input type="text" class="form-control cc" id="code_postal_utilisateur" name="code_postal_utilisateur" placeholder="Code Postal" required="required">
+                          <!-- <span class="fa fa-address-card form-control-feedback right" aria-hidden="true"></span> -->
+                      </div >
+						
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group ">
+                    
+                          <input type="date" class="form-control cc" id="age_utilisateur" name="age_utilisateur" placeholder="Date de Naissance" required="required">
+                          
+                      </div>
+                      
+                      <div class="col-md-6 col-sm-6">Sexe
+									 <div class="form-group">
+												<select name="sexe_utilisateur" id="gender" class="form-control cc">
+													<option value="M">Masculin</option>
+													<option value="F">Feminin</option>
+												</select>
+										</div>
+											
+
+							</div>
+								
+                     			 
+                     			
+				   				<div class="centrer">
+								    <img id="preview" class="img-circle profile_img" src="images/admin-user-icon-4.jpg" width="90px" height="90px" style="border-radius: 50%"/><br/>
+								    <input type="file" id="picture" name="picture" style="display: none;"/>
+								    <!--<input type="hidden" style="display: none" value="0" name="remove" id="remove">-->
+								   <div class="droite"><a href="javascript:changeProfile()">Choisissez une photo</a></div>  
+								    <!-- <a style="color: red" href="javascript:removeImage()">Remove</a> -->
+                     			 </div>
+                     			  
+						<div class="col-md-6 col-sm-6  form-group has-feedback">
+                      <label>Ville</label>
+                          <select th:field="${ville.id_ville}" id="id_ville"
+                         		 class="date-picker form-control cc">
+                         		 
+                          	<option 
+		                          	th:each="ville:${listeVille}"
+		                          	th:value="${ville.id_ville}"
+		                          	th:text="${ville.libelle_ville}"/>
+                          </select>
+                      </div>
+						
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" id="id_quartier">
+                       <label>Quartier</label>
+                        <select  class="date-picker form-control col-md-12 col-xs-12 cc">
+                          	<option>-choisissez un quartier-</option>
+                         </select>
+                      </div>	
+                      
+					   
+						
+						  <div class="form-group">
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                         <textarea class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder=" experience proffessionnel" required="required"
+											id="experience_proffessionel_pres" name="experience_proffessionel_pres" >
+										</textarea>
+                        </div>
+                      </div>
+						
+												
+												
+													 <div class="col-md-12 col-sm-12  col-xs-12 form-group has-feedback">
+													<label>Categorie</label>
+													
+													 <select th:field="${categorie.id_categorieServivce}" id="id_categorieServivce" name="id_categorieServivce" class="date-picker form-control  cc">
+						                         		 
+						                          	<option 
+								                          	th:each="cat:${listeCategorie}"
+								                          	th:value="${cat.id_categorieServivce}"
+								                          	th:text="${cat.libelle_categorie}"/>
+						                          </select>
+                      							   
+												</div>
+					 
+					 <div class="col-md-12 col-sm-12  col-xs-12 form-group has-feedback">
+						<label>Nationalite</label>
+                         <select th:field="${nationalite.id_nationalite}"  id="id_nationalite" name="id_nationalite"
+                         		 class="date-picker form-control  cc">
+                          	<option 
+		                          	th:each="nat:${listeNationalite}"
+		                          	th:value="${nat.id_nationalite}"
+		                          	th:text="${nat.libelle_nationalite}"/>
+                          </select>
+                      </div>
+					 
+							<div class="form-group">
+                      				 <div class="col-md-12 col-sm-12 col-xs-12">
+                      				 <label>Photo de Piece d'identite </label>
+                       				  	 <input type="file" name="picturePiece" class="form-control cc"  placeholder="photo Piece" required="required">
+                        			</div>
+                     			 </div>
+                     			 <div class="form-group">
+                      				 <div class="col-md-12 col-sm-12 col-xs-12">
+                      				 <label>Photo casier judiciaire </label>
+                       				  	 <input type="file" name="pictureCasierJudiciaire" class="form-control cc"  placeholder="photo casier judiciaire" required="required">
+                        			</div>
+                     			 </div>
+                      <div class="form-group">
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                         <textarea class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="votre motivation en quelque ligne" required="required"
+											id="motivation_pres" name="motivation_pres">
+										</textarea>
+                        </div>
+                      </div> 
+								</div>				
+												
+												<div class="ln_solid"></div>
+												<div class="form-group">
+													<div class="col-md-6 col-md-offset-3">
+													<button type="submit" class="btn btn-secondary" data-dismiss="modal" >fermer</button>
+														<button type="submit" class="btn btn-success" id="valider">valider</button>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</form>
+						</div>
+            </div> 
+	</div>
+</body>
+</html>

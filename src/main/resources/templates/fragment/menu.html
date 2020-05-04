@@ -1,0 +1,227 @@
+  <meta charset = "utf-8"/>
+  <div id="sidebar-menu" class="main_menu_side hidden-print main_menu" data-th-fragment="fMenu">
+   <div sec:authorize="hasRole('SUPERADMIN')">
+           	
+ 		<div class="menu_section">
+ 
+             
+             <ul class="nav side-menu"> 
+                <li> <a data-th-href="@{/}"><i class="fa fa-home"></i> ACCUEIL </a> </li> 
+                <li><a><i class="fa fa-edit"></i>UTILISATEURS<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">         
+		                 <li> <a data-th-href="@{/listeAdminPage}"><i class="fa fa-history"></i> ADMIN <span class="fa fa-chevron-circle-left"></span></a></li>
+		                  <li> <a data-th-href="@{/listeRecruteurPage}"><i class="fa fa-history"></i> RECRUTEUR <span class="fa fa-chevron-circle-left"></span></a></li>
+		                  <li> <a data-th-href="@{/listeEditeurPage}"><i class="fa fa-history"></i> EDITEUR<span class="fa fa-chevron-circle-left"></span> </a></li>
+		                  <li> <a data-th-href="@{/listePrestatairePage}"><i class="fa fa-history"></i> PRESTATAIRE <span class="fa fa-chevron-circle-left"></span></a></li> 
+		                 <!--  <li> <a data-th-href="@{/listePartenairePage}"><i class="fa fa-history"></i> PARTENAIRE <span class="fa fa-chevron-circle-left"></span></a></li> --> 
+		                  <li> <a data-th-href="@{/listeClientPage}"><i class="fa fa-history"></i> CLIENT<span class="fa fa-chevron-circle-left"></span> </a></li> 
+		                  
+             
+                    </ul>   
+                  </li>
+                   <li><a><i class="fa fa-edit"></i>AUTRES<span class="fa fa-chevron-down"></span></a>
+                 		  <ul class="nav child_menu"> 
+			                  <li><a><i class="fa fa-edit"></i>MENAGE<span class="fa fa-chevron-down"></span></a>
+			                   <ul class="nav child_menu">         
+					                  <li> <a data-th-href="@{/ListeCategorieService}"><i class="fa fa-history"></i> CATEGORIE <span class="fa fa-chevron-circle-left"></span></a></li>
+					               	  <li> <a data-th-href="@{/ListeService}"><i class="fa fa-history"></i> SERVICE <span class="fa fa-chevron-circle-left"></span></a></li>
+			                    </ul>
+			                     </li>
+			                     
+			                    <li><a><i class="fa fa-edit"></i>LOCALITE<span class="fa fa-chevron-down"></span></a>
+			                   <ul class="nav child_menu">         
+					                  <li> <a data-th-href="@{/listeVille}"><i class="fa fa-history"></i> VILLE <span class="fa fa-chevron-circle-left"></span></a></li>
+					               	  <li> <a data-th-href="@{/ListeQuartier}"><i class="fa fa-history"></i> QUARTIER <span class="fa fa-chevron-circle-left"></span></a></li>
+			                    </ul>
+			                     </li>
+			                       <li> <a data-th-href="@{/listeNationalite}"><i class="fa fa-history"></i> NATIONALITE<span class="fa fa-chevron-circle-left"></span> </a></li>
+			                         <li> <a data-th-href="@{/listeTypeP}"><i class="fa fa-history"></i>TYPE DE PRESTATION<span class="fa fa-chevron-circle-left"></span> </a></li>
+			                   </ul>
+			           </li> 
+                     
+                  <li> <a data-th-href="@{/transaction}"><i class="fa fa-history"></i> TRANSACTION<span class=""></span> </a></li>
+                  <li> <a data-th-href="@{/historique}"><i class="fa fa-history"></i> HISTORIQUE<span class=""></span> </a></li>
+                  <li><a data-th-href="@{/profilAdmin}"><i class="fa fa-edit"></i> Mon Profil <span class=" "></span></a></li> 
+                 
+                </ul>
+              </div>
+          </div>
+          <div sec:authorize="hasRole('ADMIN')">
+           	
+ 		<div class="menu_section">
+ 
+             
+             <ul class="nav side-menu"> 
+                <li> <a data-th-href="@{/}"><i class="fa fa-home"></i> Accueil </a> </li> 
+                <li><a><i class="fa fa-users"></i>Utilisateurs<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">         
+		                  <li> <a data-th-href="@{/listeRecruteurPage}"><i class=""></i> Recruteur <span class=""></span></a></li>
+		                  <li> <a data-th-href="@{/listeEditeurPage}"><i class=""></i> Editeur<span class=""></span> </a></li>
+		                  <li> <a data-th-href="@{/listePrestatairePage}"><i class=""></i> Prestataire <span class=""></span></a></li> 
+		                  <li> <a data-th-href="@{/listePartenairePage}"><i class=""></i> Partenaire <span class=""></span></a></li> 
+		                  <li> <a data-th-href="@{/listeClientPage}"><i class=""></i> Client<span class=""></span> </a></li> 
+             
+                    </ul>   
+                  </li>
+                  
+                  <li><a><i class="fa fa-edit"></i>Autre<span class="fa fa-chevron-down"></span></a>
+                 		  <ul class="nav child_menu"> 
+			                  <li><a><i class=""></i>Menage<span class="fa fa-chevron-down"></span></a>
+			                   <ul class="nav child_menu">         
+					                  <li> <a data-th-href="@{/ListeCategorieService}"><i class=""></i> Categorie <span class=""></span></a></li>
+					               	  <li> <a data-th-href="@{/ListeService}"><i class=""></i> Service <span class=""></span></a></li>
+			                    </ul>
+			                     </li>
+			                     
+			                    <li><a><i class=""></i>Localite<span class="fa fa-chevron-down"></span></a>
+			                   <ul class="nav child_menu">         
+					                  <li> <a data-th-href="@{/listeVille}"><i class=""></i> VILLE <span class=""></span></a></li>
+					               	  <li> <a data-th-href="@{/ListeQuartier}"><i class=""></i> QUARTIER <span class=""></span></a></li>
+			                    </ul>
+			                     </li>
+			                       <li> <a data-th-href="@{/listeNationalite}"><i class=""></i> Nationalite<span class=""></span> </a></li>
+			                         <li> <a data-th-href="@{/listeTypeP}"><i class=""></i> Prix<span class=""></span> </a></li>
+			                   </ul>
+			           </li> 
+                     <li> <a data-th-href="@{/historiqueUtilisateur}"><i class="fa fa-history"></i> HISTORIQUE<span class=""></span> </a></li>
+                 <!--  <li> <a data-th-href="@{/transaction}"><i class="fa fa-history"></i> TRANSACTION<span class="fa fa-chevron-circle-left"></span> </a></li>
+                  <li> <a data-th-href="@{/historique}"><i class="fa fa-history"></i> HISTORIQUE<span class="fa fa-chevron-circle-left"></span> </a></li>
+                  --> <li><a data-th-href="@{/profilAdmin}"><i class="fa fa-edit"></i> Mon profil <span class=""></span></a></li> 
+                 
+                </ul>
+              </div>
+          </div>
+          
+          <div sec:authorize="hasRole('RECRUTEUR')">
+           	
+ 		<div class="menu_section">
+ 
+             
+             <ul class="nav side-menu"> 
+                <li> <a data-th-href="@{/accueilRecruteur}"><i class="fa fa-home"></i> Accueil </a> </li> 
+                <li><a><i class="fa fa-users"></i>UTILISATEURS<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">         
+		                  <li> <a data-th-href="@{/listePrestatairePage}"><i class="fa fa-history"></i> PRESTATAIRES <span class="fa fa-chevron-circle-left"></span></a></li> 
+		                 
+		                  <li> <a data-th-href="@{/listeClientPage}"><i class="fa fa-history"></i> CLIENTS<span class="fa fa-chevron-circle-left"></span> </a></li> 
+             
+                    </ul>   
+                  </li>
+                  
+                 
+                  <li> <a data-th-href="@{/historique}"><i class="fa fa-history"></i> HISTORIQUE<span class=""></span> </a></li>
+                  <li><a data-th-href="@{/profilAdmin}"><i class="fa fa-edit"></i> MON PROFIL <span class=""></span></a></li> 
+                 
+                </ul>
+              </div>
+          </div>
+      <div sec:authorize="hasRole('CLIENT')">
+        
+          <div class="menu_section">
+             <h3> CLIENT</h3>
+             <br/>
+             <ul class="nav side-menu">  
+              
+                <li> <a data-th-href="@{/accueilClient}"><i class="fa fa-home"></i>  Accueil  </a> </li>   
+				<li> <a data-th-href="@{/ListeCategorieService}"><i class="fa fa-history"></i> Categorie service</a></li>
+                <li> <a data-th-href="@{/listePrestatairePage}"><i class="fa fa-users"></i> Prestataire </a></li> 
+                <li> <a class="nBtn"><i class="fa fa-history"></i> Reservation </a></li>
+                <li> <a data-th-href=@{/listeAvis}><i class="fa fa-envelope-o"></i> Avis </a></li>
+                <li> <a data-th-href=@{/listeAvis}><i class="fa fa-history"></i>Historique</a></li>
+                <li><a data-th-href="@{/profilClient2}"><i class="fa fa-edit"></i> Mon Profil </a></li>
+              </ul>  
+            </div>
+            
+  		</div>
+  		 <div sec:authorize="hasRole('PARTENAIRE')">
+        
+          <div class="menu_section">
+             <h3> PARTENAIRE</h3>
+             <ul class="nav side-menu">  
+              
+                <li> <a data-th-href="@{/accueilClient}"><i class="fa fa-home"></i>  Accueil  </a> </li>      
+                <li><a data-th-href="@{/detailPartenaire}"><i class="fa fa-edit"></i> Mon Profil </a></li>
+                <li> <a data-th-href="@{/listePrestataire}"><i class="fa fa-users"></i> Prestataire </a></li> 
+                <li> <a data-th-href="@{/typeDePrestation}"><i class="fa fa-history"></i> Reservation </a></li>
+               </ul>  
+            </div>
+  		</div>
+  		 <div sec:authorize="hasRole('EDITEUR')">
+        
+          <div class="menu_section">
+             <h3> EDITEUR</h3>
+             <ul class="nav side-menu">  
+              
+                <li> <a data-th-href="@{/accueilEditeur}"><i class="fa fa-home"></i>  Accueil  </a> </li>      
+                <li><a data-th-href="@{/profilEditeur}"><i class="fa fa-edit"></i> Mon Profil </a></li>
+                <li> <a data-th-href="@{/listePrestataire}"><i class="fa fa-users"></i> Prestataire </a></li> 
+               
+				<li><a><i class="fa fa-edit"></i>MENAGE<span class="fa fa-chevron-down"></span></a>
+                   <ul class="nav child_menu">         
+		                  <li> <a data-th-href="@{/ListeCategorieService}"><i class="fa fa-history"></i> CATEGORIE <span class="fa fa-chevron-circle-left"></span></a></li>
+		               	  <li> <a data-th-href="@{/ListeService}"><i class="fa fa-history"></i> SERVICE <span class="fa fa-chevron-circle-left"></span></a></li>
+                    </ul>
+                     </li>
+                    <li><a><i class="fa fa-edit"></i>LOCALITE<span class="fa fa-chevron-down"></span></a>
+                   <ul class="nav child_menu">         
+		                  <li> <a data-th-href="@{/listeVille}"><i class="fa fa-history"></i> VILLE <span class="fa fa-chevron-circle-left"></span></a></li>
+		               	  <li> <a data-th-href="@{/ListeQuartier}"><i class="fa fa-history"></i> QUARTIER <span class="fa fa-chevron-circle-left"></span></a></li>
+                    </ul>
+                     </li>
+                     <li> <a data-th-href="@{/listMessage}"><i class="fa fa-users"></i> Messages </a></li> 
+                      <li> <a data-th-href="@{/listeTypeP}"><i class="fa fa-history"></i> PRIX </a></li>
+                       <li> <a data-th-href="@{/avis}"><i class="fa fa-users"></i> Avis des clients </a></li> 
+               </ul>  
+            </div>
+  		</div>
+  		 <div sec:authorize="hasRole('PRESTATAIRE')">
+        
+          <div class="menu_section">
+             <h3> PRESTATAIRE</h3>
+             <ul class="nav side-menu">  
+              
+                <li> <a data-th-href="@{/accueilPrestataire}"><i class="fa fa-home"></i>  Accueil  </a> </li>      
+                <li><a data-th-href="@{/derReserverP}"><i class="fa fa-edit"></i> Nouvelles demandes</a></li>
+                <li> <a data-th-href="@{/listeReservationPrestataire}"><i class="fa fa-clock-o"></i> Service en cours </a></li> 
+                <li> <a data-th-href="@{/reservation}"><i class="fa fa-check"></i> Services effectuer </a></li>
+                <li> <a data-th-href="@{/calendrier}"><i class="fa fa-calendar"></i> Calandrier </a></li>
+                <li> <a data-th-href="@{/historique}"><i class="fa fa-history"></i> Historique </a></li>
+                 <li> <a data-th-href="@{/listePrestataire}"><i class="fa fa-user"></i> Profil </a></li> 
+               </ul>  
+            </div>
+  		</div>
+
+            </div>
+            <div class="myForm x_content">
+							<form class="form-horizontal form-label-left formulaire" 
+								 method="post" enctype="multipart/form-data">
+								  <div class="modal fade" role="dialog" id="exampleModal"
+									tabindex="2" aria-labelledby="exampleModalLabel">
+									<div class="modal-dialog" role="document">
+											
+							    <div class="panel panel-primary">
+                              <div class="panel-heading centrer"><h1>Reservation</h1></div>
+                              <div class="panel-body centrer">
+												<p id="messager"></p>
+												<br>
+                          
+												<a th:href="@{/typeDePrestation}" class="btn btn-success btn-lg btn-block">Nouvelle reservation</a>
+												<a th:href="@{/listeReservation}" class="btn btn-warning btn-lg btn-block">Liste de mes reservation</a>
+												
+												
+												<div class="ln_solid"></div>
+												<div class="form-group">
+													<div class="col-md-6 col-md-offset-3">
+													<button type="submit" class="btn btn-secondary" data-dismiss="modal" >fermer</button>
+														
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</form>
+						</div> 
+            <!-- /sidebar menu -->

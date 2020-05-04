@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<head>
+<title>type prestation</title>
+</head>
+
+<body class="nav-md">
+
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+	 <div class="page-title">
+              <div class="title_left">
+                <h3>TYPE PRESTATION </h3>
+              </div>
+
+               
+              
+            </div>
+		<div class="x_panel">
+		
+		 <div class="x_title">
+                    <h2>type prestation</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">        
+                  
+					<div class=" col-md-12 col-sm-12 pricings">
+                      <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="3s" th:each=" p: ${typeP}">
+						<div class="pricing-table black text-center" >
+                            <div class="type">
+                                <h2 th:text="${p.libelleP}"></h2>
+                            </div>
+
+                            <div class="price">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 nom_ut">
+                                        <h2>dès <span  th:text="${p.prixP}"> </span> Fcfa/h<br><span  ></span></h2>soit
+                                      <h3> <span  th:text="${p.prixT}"></span > Fcfa/h</h3>
+                                    </div>
+                                 
+
+                                </div>
+
+                            </div>
+                           <h5 th:text="${p.critereA}"></h5>
+                           <br>
+                           <div id="pricing-btn-02">
+                                <a class="btn btn-general btn-white nBtn" data-th-href="@{/reservation}" title="Get Started" role="button">Get Started</a>
+                            </div>
+                        </div>
+                        
+						</div>
+					
+					<!-- type prest unique -->
+					
+                      <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="3s" th:each=" p: ${typePU}">
+						<div class="pricing-table black text-center" >
+                            <div class="type">
+                                <h3 th:text="${p.libelleP}"></h3>
+                            </div>
+
+                            <div class="price">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 nom_ut">
+                                        <h2>dès <span  th:text="${p.prixP}"> </span> Fcfa/h<br><span  ></span></h2>soit
+                                      <h3> <span  th:text="${p.prixT}"></span > Fcfa/h</h3>
+                                    </div>
+                                 
+
+                                </div>
+
+                            </div>
+                           <h5 th:text="${p.critereA}"></h5>
+                           <br>
+                           <div id="pricing-btn-02">
+                                <a class="btn btn-general btn-white nBtn" data-th-href="@{/reservationUnique}" title="Get Started" role="button">Get Started</a>
+                            </div>
+                        </div>
+                        
+						</div>
+						
+						
+						<!-- <div class="col-md-6 col-sm-6 wow fadeInUp" >
+							<img alt="" src="images/android.jpg"  width="300px" height="800px">
+						</div> -->
+					</div>
+			      </div>
+			        <!-- reservation -->
+			      <div class="myForm x_content">
+							<form class="form-horizontal form-label-left formulaire" th:action="@{CreationReservation}"
+								 method="post" enctype="multipart/form-data">
+								  <div class="modal fade" role="dialog" id="exampleModal"
+									tabindex="2" aria-labelledby="exampleModalLabel">
+									<div class="modal-dialog" role="document">
+											
+							    <div class="panel panel-primary">
+                              <div class="panel-heading centrer"><h2>reservation</h2></div>
+                              <div class="panel-body">
+												<p id="messager"></p>
+												<br>
+                          
+												<div class="col-md-6 col-sm-6 col-xs-12 form-group ">
+                     <label>Date debut prestation</label>
+                         <input type="date" class="form-control cc" id="date_debut" name="date_debut" placeholder="Date du debut" required="required" >
+                     	
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group ">
+                     <label>Date Fin prestation</label>
+                     <input type="date" class="form-control cc" id="date_fin" name="date_fin" placeholder="Date de fin" required="required">
+                         
+                      </div>
+                      <div>
+							<input type="text" id="type" value="Prestation unique">                      
+                      </div>
+                     <!--  <div class="col-md-12 col-sm-12 col-xs-12 form-group ">
+					      <label class="form">Nombre de jour :</label>
+					      <input type="text" class="textbox" id="numdays2" name="numdays"/>
+						</div>
+                      
+                      
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                       <label>Heure debut prestation</label>
+                         <input class="form-control cc" type="time">
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                       <label>Heure fin prestation</label>
+                         <input  class="form-control cc" type="time">
+                      </div>
+						 -->
+						<!--  <div>
+						 	 <div class="col-md-2 col-sm-2 col-xs-12 form-group ">
+							    <label for="appt-time">Lundi</label>
+							    <input class="form-control cc" id="appt-time" type="time" name="appt-time"
+							           min="12:00" max="18:00" required>
+							   </div>
+							   	 <div class="col-md-2 col-sm-2  col-xs-12 form-group ">
+							    <label for="appt-time">Mardi</label>
+							    <input class="form-control cc" id="appt-time" type="time" name="appt-time"
+							           min="12:00" max="18:00" required>
+							   </div>
+							    <div class="col-md-2 col-sm-2 col-xs-12 form-group ">
+							    <label for="appt-time">Mercredi</label>
+							    <input class="form-control cc" id="appt-time" type="time" name="appt-time"
+							           min="12:00" max="18:00" required>
+							   </div>
+							   	 <div class="col-md-2 col-sm-2  col-xs-12 form-group ">
+							    <label for="appt-time">Jeudi</label>
+							    <input class="form-control cc" id="appt-time" type="time" name="appt-time"
+							           min="12:00" max="18:00" required>
+							   </div>
+							    <div class="col-md-2 col-sm-2 col-xs-12 form-group ">
+							    <label for="appt-time">Vendredi</label>
+							    <input class="form-control cc" id="appt-time" type="time" name="appt-time"
+							           min="12:00" max="18:00" required>
+							   </div>
+							   	 <div class="col-md-2 col-sm-2  col-xs-12 form-group ">
+							    <label for="appt-time">Samedi</label>
+							    <input class="form-control cc" id="appt-time" type="time" name="appt-time"
+							           min="12:00" max="18:00" required>
+							   </div>
+							 
+							   	
+							 </div>
+ 						 -->
+
+						 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                      <label>Ville</label>
+                          <select th:field="${ville.id_ville}" id="id_ville"
+                         		 class="date-picker form-control cc">
+                         		 
+                          	<option 
+		                          	th:each="ville:${listeVille}"
+		                          	th:value="${ville.id_ville}"
+		                          	th:text="${ville.libelle_ville}"/>
+                          </select>
+                      </div>
+						
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" id="id_quartier">
+                       <label>Quartier</label>
+                        <select  class="date-picker form-control  cc">
+                          	<option>-choisissez un quartier-</option>
+                         </select>
+                      </div>
+                    
+						
+					<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback ">
+					 <label>Categorie de prestation</label>
+                          <select  id="id_cate" th:field="${categorie.id_categorieServivce}"
+                         		 class="date-picker form-control  cc centrer">
+                         		 
+                          	<option 
+		                          	th:each="cat:${listeCategorie}"
+		                          	th:value="${cat.id_categorieServivce}"
+		                          	th:text="${cat.libelle_categorie}"/>
+                          </select>
+                      </div> 
+						 
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" id="id_service">
+                      </div>
+                   
+                      
+                          
+                       <div class="col-md-12 col-sm-12 col-xs-12 profile_details tab" id="id_prestataire">
+                      </div>
+
+				
+
+		
+							
+												
+												<div class="ln_solid"></div>
+												<div class="form-group">
+													<div class="col-md-6 col-md-offset-3">
+													<button type="submit" class="btn btn-secondary" data-dismiss="modal" >fermer</button>
+														<button type="submit" class="btn btn-success" id="valider">valider</button>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</form>
+						</div> 	
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

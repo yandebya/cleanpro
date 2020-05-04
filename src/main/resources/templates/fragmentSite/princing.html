@@ -1,0 +1,63 @@
+  <meta charset="utf-8"/>
+  <div data-th-fragment="fPrincing" xmlns:th="http://www.thymeleaf.org">
+ <section id="pricing">
+	<div id="services-02">
+<div class="content-box-lg_prix">
+             <div class="container">            
+				     <div class=" row1">
+			   			  <div class="col-md-12 col-sm-12 wow slideInLeft">
+			                    <div class="vertical-heading">                  
+			                        <h2 class="centrerText">Type de prestation</h2>
+			                    </div>
+			               </div>
+                     </div>
+                   
+              
+
+                <div class="row centrerText">
+
+
+                   <div class=" col-md-12 col-sm-12 pricings">
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="3s" th:each=" p: ${typeP}">
+
+                        <!-- Pricing Table 02 -->
+                        <div class="pricing-table black text-center" >
+                            <div class="type">
+                                <h3 th:text="${p.libelleP}"></h3>
+                            </div>
+
+                            <div class="price">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h2>dès <span  th:text="${p.prixP}"> </span> Fcfa/h<br><span  ></span></h2>soit
+                                      <h3> <span  th:text="${p.prixT}"></span > Fcfa/h</h3>
+                                    </div>
+                                 
+
+                                </div>
+
+                            </div>
+                           <h5 th:text="${p.critereA}"></h5>
+                           <!--  <ul class="package">
+                                <li></li>
+                                <li><span th:text="${p.critereB}"></span></li>
+                                <li><span th:text="${p.critereC}"></span></li>
+                               
+                            </ul> -->
+
+                           
+                        </div>
+
+                    </div>
+                    </div>
+                   
+                </div>
+
+            </div>
+
+       </div>
+	</div> 
+    </section>
+    </div>

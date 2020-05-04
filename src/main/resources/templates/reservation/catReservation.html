@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<head>
+<title>utilisateurp</title>
+
+</head>
+
+<body class="nav-md " >
+				<hr class="cb">
+						<center><h3>Service</h3></center>
+					
+					<div class="clearfix"></div>
+                       <!--  <div class="col-md-3 col-sm-6 col-xs-12 " th:each="service: ${service}">
+                          <div class="pricing">
+                            <div class="x_content">
+                              <div class="">
+                                <div class="">
+                                  <ul class="list-unstyled text-left">
+                                    <li><input type="checkbox"> <a class="taille" th:text="${service.libelle_service}" ></a> </li>
+                                   
+                                 </ul>
+                                </div>
+                                
+                                
+                            </div>
+                            <table class="id_sousService">
+                            	
+                            </table>
+                            
+                          </div>
+                          </div>
+                      
+                 </div> -->
+                
+                     <fieldset>
+                          
+                          <legend>Veuillez sélectionner vos intérêts :</legend>
+  <div th:each="service: ${service}">
+    <input type="checkbox" id="coding" name="interest" th:value="${service.id_service}" th:field="${ser.id_service}">
+    <label for="coding" th:text="${service.libelle_service}">Développement</label>
+  </div>
+</fieldset>
+                          
+                 
+</body>
+</html>

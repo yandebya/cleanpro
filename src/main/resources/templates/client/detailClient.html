@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<title>profil cli</title>
+</head>
+<div class="clearfix"></div>
+<body class="nav-md">
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+
+       
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>INFORMATION DETAILLE SUR LE CLIENT <span th:text="${nombreClient}"></span></h3>
+              </div>
+
+            </div>
+            
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>User Report <small>Activity report</small></h2>
+                   <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul> 
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                      <div class="profile_img">
+                        <div id="crop-avatar">
+                          <!-- Current avatar -->
+                     
+                        <a class="fancybox " th:href="@{getPhoto_utilisateur(photo_utilisateur=${client.photo_utilisateur})}"><img class="img-circle"th:src="@{getPhoto_utilisateur(photo_utilisateur=${client.photo_utilisateur})}"width="150" height="150"   alt=""></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+
+                      <div class="profile_title">
+                        <div class="col-md-6">
+                          <h2>User Activity Report</h2>
+                        </div>
+                        <div class="col-md-6">
+                          <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                            <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- start of user-activity-graph -->
+                     
+                      <!-- end of user-activity-graph -->
+
+                      <div class="" role="tabpanel" data-example-id="togglable-tabs">
+ 							   	 <span th:hidden="${client.id_utilisateur}"></span>
+                    			 <h4>Nom:     <span th:text="${client.nom_utilisateur}"></span></h4>
+                				 <h4>Prenom:    <span th:text="${client.prenom_utilisateur}"></span></h4>
+                				  <h4>Sexe: <span th:text="${client.sexe_utilisateur}"></span></h4>
+                				  <h4>Date Naissance: <span th:text="${client.age_utilisateur}"></span></h4>
+                				 <h4>Email: <span th:text="${client.email_utilisateur}"></span></h4>
+                				 <h4>Telephone: <span th:text="${client.telephone_utilisateur}"></span></h4>
+                				 <h4>Date d'inscription: <span th:text="${client.date_inscription}"></span></h4>
+                			
+                				 <h4>Nom Inscripteur: <span th:text="${client.enregistrerPar}"></span></h4>
+                				 <h4>Prenom Inscripteur: <span th:text="${client.enregistrerParPrenom}"></span></h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+	<!-- /page content -->
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>utilisateur</title>
+</head>
+
+<body class="nav-md " >
+
+	<!-- page content -->
+	<div class="right_col "  role="main" data-layout-fragment="content">
+	<center><h3>INSCRIPTION D'UN ADMINISTRATEUR</h3></center>
+		<div class="x_panel_enregis">
+		
+		 <div class="x_title">
+
+<span style="color: red">Veuillez noter que tous les champs sont obligatoires</span>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                  	
+                     
+								<form th:action="@{creationAdmin}" method="post" th:object="${admin}" enctype="multipart/form-data"
+					 class="form-horizontal form-label-left input_mask">
+
+                     <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="inputSuccess3" placeholder="Prenom" required="required"
+                        th:field="${admin.nom_utilisateur}">
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="inputSuccess3" placeholder="Prenom" required="required"
+                        th:field="${admin.prenom_utilisateur}">
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+						
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-right cc" id="inputSuccess4" placeholder="Email"
+                        th:field="${admin.email_utilisateur}">
+                        <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="inputSuccess5" placeholder="Telephone" required="required"
+                         th:field="${admin.telephone_utilisateur}">
+                        <span class="fa fa-phone form-control-feedback right " aria-hidden="true"></span>
+                      </div>
+                      
+						 <div class="item form-group">
+						<div class="centrer"><label>Photo </label></div>
+						<div class="centrer">
+						
+						 
+   
+    <img id="preview" src="images/admin-user-icon-4.jpg" width="90px" height="90px" style="border-radius: 50%"/><br/>
+    <input type="file" id="image" name="picture" style="display: none;"/>
+    <!--<input type="hidden" style="display: none" value="0" name="remove" id="remove">-->
+    <a href="javascript:changeProfile()">Choisissez une photo</a> 
+    <!-- <a style="color: red" href="javascript:removeImage()">Remove</a> -->
+
+					
+					</div>    
+
+                      <div class="form-group">
+                      
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input type="date" class="form-control cc"  placeholder="Date de Naissance" required="required"
+                           th:field="${admin.age_utilisateur}">
+                        </div>
+                      </div>
+                     <div class="item form-group col-md-12 col-sm-12 col-xs-12">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Genre <span class="required">*</span>
+									</label>
+
+									<div class="col-md-8 col-sm-8 col-xs-12" required="required">
+									<span class="c">
+										<input type="radio" th:field="${admin.sexe_utilisateur}" value="H" checked="checked" />
+										 <label>MASCULIN</label> 
+									</span>
+									<span class="c">
+										<input type="radio" th:field="${admin.sexe_utilisateur}" value="F" />
+										 <label> FEMININ</label>
+									</span>
+									</div>
+								</div>
+                     
+                      <div class="form-group">
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input class="date-picker form-control col-md-12 col-xs-12 cc" required="required" 
+                         placeholder="login" type="text" th:field="${admin.username}"
+                      >
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input class="date-picker form-control col-md-12 col-xs-12 cc" required="required" 
+                          placeholder="Mot de Passe" type="password" th:field="${admin.password}">
+                          <p th:errors="*{password}"></p>
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+     
+						   <button class="btn btn-primary" type="reset">Annuler</button>
+                          <button type="submit" class="btn btn-success">Ajouter</button>
+                        </div>
+                      </div>
+
+                    </form>
+                    </div>
+		
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

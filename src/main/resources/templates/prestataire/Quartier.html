@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<head>
+<title>utilisateurp</title>
+</head>
+
+<body class="nav-md " >
+
+	              <div class=" form-group has-feedback">
+	              <label>Quartiers</label>
+                        <select th:field="${cquartier.id_quartier}"
+                         		 class="date-picker form-control  cc">
+                          	<option 
+		                          	th:each="quartier:${quartier}"
+		                          	th:value="${quartier.id_quartier}"
+		                          	th:text="${quartier.libelle_quartier}"/>
+                          </select>
+                      </div>
+              
+	<!-- /page content -->
+</body>
+</html>

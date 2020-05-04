@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>projet </title>
+  </head>
+
+  <body class="nav-md">
+  
+       <!-- page content -->
+           <div class="right_col" role="main" data-layout-fragment="content">
+       			<!-- page content -->
+        
+          <div class="x_panel">
+          <h3>TABLEAU DE BORD</h3>
+      <hr class="cb" size="5">
+            <div class="row top_tiles">
+               <a th:href="@{/reservation}" class="couteur">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cacd">
+                  <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                  <div class="count"><span >10</span></div>
+                  <h3>Reservation</h3>
+                  <p> reservation</p>
+                </div>
+              </div>
+              </a>
+            <a data-th-href="@{/historique}" >
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca caed">
+                  <div class="icon"><i class="fa fa-clock-o"></i></div>
+                  <div class="count"><span >10</span></div>
+                  <h3>Historique </h3>
+                  <p>historique </p>
+                </div>
+              </div>
+             </a>
+             
+             <a th:href="@{/listePrestatairePage}">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca caffd">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count"><span th:text="${nbrePresVal}"></span></div>
+                  <h3>Prestataire</h3>
+                  <p> liste des Prestataire</p>
+                </div>
+              </div>
+              </a>
+            <a th:href="@{/listeAvis}">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cabd">
+                  <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                  <div class="count"><span th:text="${nombreAvisParClient}"></span></div>
+                  <h3 > Mon avis</h3>
+                  <p >avis </p>
+                </div>
+              </div>
+            </div>
+			</a>
+            
+          </div>
+
+        <!-- /page content -->
+          </div>     
+        <!-- /page content -->
+     
+  </body>
+</html>

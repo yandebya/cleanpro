@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}" xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>projet </title>
+  </head>
+
+  <body class="nav-md">
+  
+       <!-- page content -->
+           <div class="right_col" role="main" data-layout-fragment="content">
+          
+       			<div class="x_panel_acceil">   
+       		    <h3 class="tdb">TABLEAU DE BORD</h3>
+      <hr class="cb" size="5">
+                <div class="row top_tiles">
+               <a th:href="@{/listePrestatairePageNonPost}" class="couteur">
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca caad">
+                  <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                  <div class="count"><span th:text="${ndrePNp}"></span></div>
+                  <h3>Inscrit</h3>
+                  <p>prestataire inscrit.</p>
+                </div>
+              </div>
+              </a>
+            <a data-th-href="@{/listePrestatairePageNonValider}" >
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cabd">
+                  <div class="icon"><i class="fa fa-clock-o"></i></div>
+                  <div class="count"><span th:text="${nbrePresNonVal}"></span></div>
+                  <h3>attente  de validation </h3>
+                  <p>prestataire en attente  de validation</p>
+                </div>
+              </div>
+             </a>
+             
+             <a th:href="@{/listePrestatairePage}">
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cadd">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count"><span th:text="${nbrePresVal}"></span></div>
+                  <h3>valide</h3>
+                  <p>prestataire valide</p>
+                </div>
+              </div>
+              </a>
+            </div>  
+             <div class="row top_tiles"> 
+            <a data-th-href="@{/listeVille}" >
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cacd">
+                  <div class="icon"><i class="fa fa-industry"></i></div>
+                  <div class="count"><span th:text="${nombreVille}"></span></div>
+                  <h3>villes couvrables</h3>
+                  <p>ville dans les quelles on peut intervenir</p>
+                </div>
+              </div>
+             </a>
+             
+             <a th:href="@{/ListeCategorieService}">
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca caed">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count"><span th:text="${nombreCategorie}"></span></div>
+                  <h3>Categorie de services</h3>
+                  <p>prestataire valide</p>
+                </div>
+              </div>
+              </a>
+            <a th:href="@{/listMessage}">
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca caffd">
+                  <div class="icon"><i class="fa fa-envelope-o" ></i></div>
+                  <div class="count"><span th:text="${nombreSmsVisiteur}"></span></div>
+                  <h3 >Message Visiteur</h3>
+                  <p >visiteurs du plateforme</p>
+                </div>
+              </div>
+              </a>
+              
+            </div>
+            
+            <div class="row top_tiles">
+               <a th:href="@{/listeClientPage}" class="couteur">
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cabd">
+                  <div class="icon"><i class="fa fa-cart-arrow-down"></i></div>
+                  <div class="count"><span th:text="${nombre}"></span></div>
+                  <h3>Clients</h3>
+                  <p>Nos clients</p>
+                </div>
+              </div>
+              </a>
+           
+             <a th:href="@{/listeRecruteurPage}">
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cadd">
+                  <div class="icon"><i class="fa fa-users"></i></div>
+                  <div class="count"><span th:text="${nombreRecruteur}"></span></div>
+                  <h3>Recruteurs</h3>
+                  <p>Nos Recruteurs</p>
+                </div>
+              </div>
+              </a>
+            <a th:href="@{/listeEditeurPage}">
+              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cacd">
+                  <div class="icon"><i class="fa fa-pencil-square-o"></i></div>
+                  <div class="count"><span th:text="${nombreEditeur}"></span></div>
+                  <h3 >Editeur</h3>
+                  <p >editeur du plateforme</p>
+                </div>
+              </div>
+              </a>
+              
+            </div>
+           	  <!-- /button menu acceuil -->  
+          </div>
+          </div>   
+        <!-- /page content -->
+     
+  </body>
+</html>

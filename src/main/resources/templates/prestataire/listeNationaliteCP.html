@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<head>
+<title>Ville</title>
+</head>
+
+<body class="nav-md " >
+
+	
+	             <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                      <label>Ville</label>
+                          <select 
+                         		 class="date-picker form-control col-md-12 col-xs-12 cc">
+                         		 
+                          	<option 
+		                          	th:each="nationalite:${listeNationalite}"
+		                          	th:value="${nationalite.id_nationalite}"
+		                          	th:text="${nationalite.libelle_nationalite}"/>
+                          </select>
+                      </div>
+	<!-- /page content -->
+</body>
+</html>

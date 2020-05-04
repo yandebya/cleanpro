@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<title>admin</title>
+</head>
+
+<body class="nav-md">
+	<!-- page content -->
+	<div class="right_col "  role="main" data-layout-fragment="content">
+	<div class="row">
+              <div class="col-md-12 col-xs-12">
+                <div class="x_panel_enregistrement">
+                  <div class="x_title">
+                    <h2>Créez votre compte (Client)</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                     
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form th:action="@{creationAdmin}" method="post" enctype="multipart/form-data"
+					 class="form-horizontal form-label-left input_mask">
+
+                     <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="inputSuccess3" placeholder="Prenom" required="required"
+                        th:field="${admin.nom_utilisateur}">
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="inputSuccess3" placeholder="Prenom" required="required"
+                        th:field="${admin.prenom_utilisateur}">
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+						  <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
+                        <img src="../images/logo.png" width="94" height="95"  />
+                        
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-right cc" id="inputSuccess4" placeholder="Email"
+                        th:field="${admin.email_utilisateur}">
+                        <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="text" class="form-control cc" id="inputSuccess5" placeholder="Telephone" required="required"
+                         th:field="${admin.telephone_utilisateur}">
+                        <span class="fa fa-phone form-control-feedback right " aria-hidden="true"></span>
+                      </div>
+                      
+
+                     
+
+                      <div class="form-group">
+                      
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input type="date" class="form-control cc"  placeholder="Date de Naissance" required="required"
+                           th:field="${admin.age_utilisateur}">
+                        </div>
+                      </div>
+                     <div class="item form-group col-md-12 col-sm-12 col-xs-12">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Genre <span class="required">*</span>
+									</label>
+
+									<div class="col-md-8 col-sm-8 col-xs-12" required="required">
+									<span class="c">
+										<input type="radio" th:field="${admin.sexe_utilisateur}" value="H" checked="checked" />
+										 <label>MASCULIN</label> 
+									</span>
+									<span class="c">
+										<input type="radio" th:field="${admin.sexe_utilisateur}" value="F" />
+										 <label> FEMININ</label>
+									</span>
+									</div>
+								</div>
+                     
+                      <div class="form-group">
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input class="date-picker form-control col-md-12 col-xs-12 cc" required="required" 
+                         placeholder="login" type="text" th:field="${admin.username}"
+                      >
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <input class="date-picker form-control col-md-12 col-xs-12 cc" required="required" 
+                          placeholder="Mot de Passe" type="password" th:field="${admin.password}">
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+     
+						   <button class="btn btn-primary" type="reset">Annuler</button>
+                          <button type="submit" class="btn btn-success">Ajouter</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+
+              
+              </div>
+
+              <!-- <div class="col-md-4 col-xs-12">
+               
+                  <div class="x_panel_enregistrement">
+                    <br />
+                    <form class="form-horizontal form-label-left">
+                    <div class="x_title">
+                    <h2>A propos du Compte</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                     
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+				Les champs marqués d'un « * » sont obligatoires et la mise en place du service ne pourra pas être fait s'ils ne
+				 sont pas complétés. En vertu de la création de votre compte que vous allez réaliser sur notre site, les données
+				  vous concernant font l'objet d'un traitement dont le responsable est SOCIETE CLEAN PRO situé a OWENDO
+				    . Elles seront utilisées pour mettre en place et vous fournir le service demandé ainsi que vous 
+				   contacter en cas de problèmes, de prospection commerciale ou d'évolution du service. Elles seront conservées 
+				   pendant 3 ans après la clôture de compte, dernière utilisation du service ou du dernier envoi d'une communication
+				    commerciale. Vos données sont destinées au service relations clientèles et au service technique de SOCIETE CLEAN PRO.
+				     Conformément à la réglementation applicable en matière de protection des données personnelles, vous disposez 
+				     d'un droit d'accès, de rectification, d'opposition, de limitation du traitement, de portabilité pour demander
+				      le transfert de vos données lorsque cela est possible et d'effacement.
+      
+                     </form>
+                  </div>
+                </div> -->
+              </div>
+            </div> 
+	<!-- /page content -->
+</body>
+</html>

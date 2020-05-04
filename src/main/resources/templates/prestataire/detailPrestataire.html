@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+   <meta charset="utf-8">
+    
+<head>
+<title>profil pres</title>
+</head>
+<div class="clearfix"></div>
+<body class="nav-md">
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+
+       
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Detail </h3>
+              </div>
+
+            </div>
+            
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>INFORMATION Sur <span th:text="${prestataire.nom_utilisateur}"></span></h2>
+                   <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul> 
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                      <div class="profile_img">
+                        <div id="crop-avatar">
+                          <!-- Current avatar -->
+                           
+                       <a class="fancybox " th:href="@{getPhoto_utilisateur(photo_utilisateur=${prestataire.photo_utilisateur})}">
+                       <img style="box-shadow: 5px 5px 10px silver;margin-left: 10px;border-radius: 5%" class="img-cifrcle" th:src="@{getPhoto_utilisateur(photo_utilisateur=${prestataire.photo_utilisateur})}"width="170" height="200"   alt=""></a>
+                      
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                    
+                     
+                    <div class="col-md-9 col-sm-9 col-xs-12" >
+
+                      <div class="tab" role="tabpanel" data-example-id="togglable-tabs">
+                    
+                	<table class="data table table-striped no-margin" style="background-color:#dff4ff; font-size: 20px;  /* background-image: url(../images/exigence-de-qualite-pour-l-eau-du-robinet.jpg); */">
+                              
+                              <tbody>
+                                <tr>
+                                  
+                                  <td>Nom</td>
+                                  <td  th:text="${prestataire.nom_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Prenom</td>
+                                  <td  th:text="${prestataire.prenom_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                  
+                                  <td>Sexe</td>
+                                  <td  th:text="${prestataire.sexe_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                  <td>Date de naissance</td>
+                                  <td  th:text="${prestataire.age_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Telephone</td>
+                                  <td  th:text="${prestataire.telephone_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Email</td>
+                                  <td  th:text="${prestataire.email_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                                 
+                                  <td>Nationalite</td>
+                                  <td  th:text="${prestataire.nationalite.libelle_nationalite}"></td>
+                                </tr>
+                                 <tr>
+                              
+                                  <td>Code postal</td>
+                                  <td  th:text="${prestataire.code_postal_utilisateur}"></td>
+                                </tr>
+                                 <tr>
+                               
+                                  <td>Ville</td>
+                                  <td  th:text="${prestataire.ville.libelle_ville}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Quartier</td>
+                                  <td  th:text="${prestataire.quartier.libelle_quartier}"></td>
+                                </tr>
+                                 <tr>
+                               
+                                  <td>Experience proffessionnel</td>
+                                  <td  th:text="${prestataire.experience_proffessionel_pres}"></td>
+                                </tr>
+                                 <tr>
+                            
+                                  <td>Motivation</td>
+                                  <td  th:text="${prestataire.motivation_pres}"></td>
+                                </tr>
+                                 <tr>
+                                
+                                  <td>Piece d'identité</td>
+                                  <td><a class="fancybox " th:href="@{getPiece_identite_pres(piece_identite_pres=${prestataire.piece_identite_pres})}">voir</a></td>
+                                </tr>
+                                 <tr>
+                                 
+                                  <td>Casier judicière</td>
+                                  <td> <a class="fancybox " th:href="@{getCasier_judiciere_pres(casier_judiciere_pres=${prestataire.casier_judiciere_pres})}">voir</a></td>
+                                </tr>
+                              </tbody>
+                              
+                            </table>
+                      </div>
+                      <div> <a title="bloquer/debloquer"  th:href="@{activerPrestataire(id_utilisateur=${prestataire.id_utilisateur})}" class="btn btn-success btn-xs blocBtn"><i class="fa fa-lock danger btn-xs"></i>/<i class="fa fa-unlock btn-xs" aria-hidden="true"></i> </a></div>
+                      <div class="myForm">
+							<div class="modal" id="myModalBloc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">validation</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p class="alert alert-success">Voulez-vous valider cet utilisateur? </p>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-secondary" data-dismiss="modal" >annuler</button>
+											<a href=""  class="btn btn-primary" id="blocRef">valider</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>  
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+	<!-- /page content -->
+</body>
+</html>

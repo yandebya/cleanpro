@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<title>service</title>
+</head>
+
+<body class="nav-md " >
+
+	<!-- page content -->
+	<div class="right_col "  role="main" data-layout-fragment="content">
+	
+	<div class=""></div>
+	
+	<h1>Ajout d'un ...</h1>
+		<div class="x_panel">
+		
+				<div class="dropdown">
+				  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="badge bg-green count"><span text=""></span></span>
+                  </a>
+                </div>
+                
+                  <br/>
+		 
+		 <form th:action="@{envoiNotification}" method="post" id="comment_form">
+		 <div><label>sujet</label>
+			<input type="text" name="subject" class="form-control" id="subject" th:field="${notification.objet}" /></div>
+		<div><label>contenu</label>
+			<input type="text" name="comment" class="form-control" id="comment" th:field="${notification.comment}" /></div>
+			
+		<div><input type="submit" value="valider" id="post" class=""></div>
+		</form>
+		</div>
+		
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

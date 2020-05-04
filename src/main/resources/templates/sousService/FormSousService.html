@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<title>service</title>
+</head>
+
+<body class="nav-md " >
+
+	<!-- page content -->
+	<div class="right_col "  role="main" data-layout-fragment="content">
+	<h1>Ajout d'un sous service</h1>
+		<div class="x_panel">
+		
+		 <div class="x_title">
+                    <h2>Formulaire creation d'un <small>sous service</small></h2>
+                    <span th:text="${message}"></span>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                  	<form th:action="@{/creationSousService}" class="form-horizontal form-label-left" method="post">
+								
+								
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Libelle sous Service<span class="required">*</span>
+										
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12"
+											id="libelle sous service"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="libelle"  required="required"
+											type="text" th:field="${sousService.libelle_sousService}">
+									</div>
+								</div>
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Description sous Service<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<textarea class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="Description sous service" 
+											required="required"
+											type="text" th:field="${sousService.description_sousService}">
+										</textarea>
+									</div>
+								</div>
+						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> Service <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select th:field="${Serv.id_service}" class="form-control col-md-7 col-xs-12">
+								<option th:each="service : ${Service}" 									
+								        th:value="${service.id_service}"
+										th:text="${service.libelle_service}" >
+								</option>
+						</select>   
+					 
+						</div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <button  type="submit" id="submit"  class="btn btn-primary" >VALIDER</button>
+                        </div>
+                      </div>
+                      			          
+                      <div class="ln_solid"></div>
+                    </form>
+                  </div>
+                  
+                  <div class="myForm">
+							<div class="modal" id="myModalBloc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">validation</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p class="alert alert-success">Voulez-vous valider cet utilisateur? </p>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-secondary" data-dismiss="modal" >annuler</button>
+											<a href=""  class="btn btn-primary" id="blocRef">valider</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>  
+		
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

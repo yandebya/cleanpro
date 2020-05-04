@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>reservations</title>
+
+</head>
+
+<body class="nav-md">
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+	 <div class="page-title">
+              <div class="title_left">
+                <h3>RESERVATION</h3>
+              </div>
+
+              
+              
+            </div>
+		<div class="x_panel">
+		<div class="x_title">
+                    <h2>FAITES VOTRE RESERVATION</h2>
+                    
+                   <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul> 
+                    <div class="clearfix"></div>
+                     
+                  </div> 
+                   <h2 class="centrer"> </h2>
+                  <form th:action="@{CreationReservation}" method="post">
+                  
+                 	 <div class="col-md-6 col-sm-6 col-xs-12 form-group ">
+                     <label>Date debut prestation</label>
+                          <input type="date" th:field="${reservation.date_debut}" class="form-control cc" id="pick_date" onchange="cal()" placeholder="Date de Naissance" required="required">
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group ">
+                     <label>Date Fin prestation</label>
+                          <input type="date" th:field="${reservation.date_fin}" class="form-control cc" id="drop_date"  onchange="cal()" placeholder="Date de Naissance" required="required">
+                      </div>
+                      
+                      <div>
+							<input type="text" value="Prestation unique">                      
+                      </div>
+                      
+                     <!--  <div class="col-md-12 col-sm-12 col-xs-12 form-group ">
+					      <label class="form">Nombre de jour :</label>
+					      <input type="text" class="textbox" id="numdays2" name="numdays"/>
+						</div>
+                      
+                      
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                       <label>Heure debut prestation</label>
+                         <input class="form-control cc" type="time">
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                       <label>Heure fin prestation</label>
+                         <input  class="form-control cc" type="time">
+                      </div>
+						 -->
+						 
+
+						 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                      <label>Ville</label>
+                          <select th:field="${ville.id_ville}" id="id_ville"
+                         		 class="date-picker form-control cc">
+                         		 
+                          	<option 
+		                          	th:each="ville:${listeVille}"
+		                          	th:value="${ville.id_ville}"
+		                          	th:text="${ville.libelle_ville}"/>
+                          </select>
+                      </div>
+						
+                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" id="id_quartier">
+                       <label>Quartier</label>
+                        <select  class="date-picker form-control  cc">
+                          	<option>-choisissez un quartier-</option>
+                         </select>
+                      </div>
+                    
+						
+					<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback ">
+					 <label>Categorie de prestation</label>
+                          <select  id="id_cate"
+                         		 class="date-picker form-control  cc centrer">
+                         		 
+                          	<option 
+		                          	th:each="cat:${categorie}"
+		                          	th:value="${cat.id_categorieServivce}"
+		                          	th:text="${cat.libelle_categorie}"/>
+                          </select>
+                      </div> 
+						 
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" id="id_service">
+                      </div>
+                   
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" id="id_sous_service">
+                      </div>
+                          
+                       <div class="col-md-12 col-sm-12 col-xs-12 profile_details tab" id="id_prestataire">
+                      </div>
+
+				
+
+		
+				<div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+     
+						   <button class="btn btn-primary" type="reset">Annuler</button>
+                          <button type="submit" class="btn btn-success">Ajouter</button>
+                        </div>
+                      </div>
+                    </form>
+		 </div>
+		  
+	</div>
+	<!-- /page content -->
+</body>
+</html>

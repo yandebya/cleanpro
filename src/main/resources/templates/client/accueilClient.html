@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>accueil cli</title>
+</head>
+
+<body class="nav-md">
+  
+       <!-- page content -->
+           <div class="right_col" role="main" data-layout-fragment="content">
+       			<!-- page content -->
+        
+          <div class="x_panel">
+          <h3>TABLEAU DE BORD</h3>
+      <hr class="cb" size="5">
+            <div class="row top_tiles">
+               <a  class="couteur nBtn">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cacd">
+                  <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                  <div class="count"><span >10</span></div>
+                  <h3>Reservation</h3>
+                  <p> reservation</p>
+                </div>
+              </div>
+              </a>
+            <a data-th-href="@{/ListeCategorieService}" >
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca caed">
+                  <div class="icon"><i class="fa fa-clock-o"></i></div>
+                   <div class="count"><span th:text="${nombreCategorie}"></span></div>
+                  <h3>Services </h3>
+                  <p>Services </p>
+                </div>
+              </div>
+             </a>
+             
+             <a th:href="@{/listePrestatairePage}">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca caffd">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count"><span th:text="${nbrePresVal}"></span></div>
+                  <h3>Prestataire</h3>
+                  <p> liste des Prestataire</p>
+                </div>
+              </div>
+              </a>
+            <a th:href="@{/listeAvis}">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats  ca cabd">
+                  <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                  <div class="count"><span th:text="${nombreAvisParClient}"></span></div>
+                  <h3 > Mon avis</h3>
+                  <p >avis </p>
+                </div>
+              </div>
+              </a>
+            </div>
+			
+            
+          </div>
+						<div class="myForm x_content">
+							<form class="form-horizontal form-label-left formulaire" 
+								 method="post" enctype="multipart/form-data">
+								  <div class="modal fade" role="dialog" id="exampleModal"
+									tabindex="2" aria-labelledby="exampleModalLabel">
+									<div class="modal-dialog" role="document">
+											
+							    <div class="panel panel-primary">
+                              <div class="panel-heading centrer"><h1>Reservation</h1></div>
+                              <div class="panel-body centrer">
+												<p id="messager"></p>
+												<br>
+                          
+												<a th:href="@{/typeDePrestation}" class="btn btn-success btn-lg btn-block">Nouvelle reservation</a>
+												<a th:href="@{/listeReservation}" class="btn btn-warning btn-lg btn-block">Liste de mes reservation</a>
+												
+												
+												<div class="ln_solid"></div>
+												<div class="form-group">
+													<div class="col-md-6 col-md-offset-3">
+													<button type="submit" class="btn btn-secondary" data-dismiss="modal" >fermer</button>
+														
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</form>
+						</div> 
+        <!-- /page content -->
+          </div>     
+        <!-- /page content -->
+     
+  </body>
+</html>

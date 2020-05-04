@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>liste pres</title>
+</head>
+
+<body class="nav-md">
+	<!-- page content -->
+	<div class="right_col" role="main" data-layout-fragment="content">
+	 <div class="page-title">
+              <div class="title_left">
+                <h3>LISTE </h3>
+              </div>     
+            </div>
+		<div class="x_panel">
+		
+		 <div class="x_title">
+                    <h2>PRESTATAIRE NON POSTER </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                    
+                      
+                   <div class="clearfix"></div>
+                   
+                   
+                   <table id="datatable-buttons" class="table table-striped table-bordered">
+                   <thead>
+						<tr>
+							<th><input  type="checkbox"></th><th>N</th><th>actif</th><th>NOM</th><th>PRENOM</th><th>Action</th>
+						
+						</tr>
+						</thead>
+						  <tbody>
+							<tr th:each=" prestataire: ${prestataire}">
+							 	<td><input type="checkbox"></td>
+								<td th:text="${prestataire.id_utilisateur}"></td>
+								<td th:text="${prestataire.actived}"></td>
+								<td th:text="${prestataire.nom_utilisateur}"></td>
+								<td th:text="${prestataire.prenom_utilisateur}"></td>
+								<!-- <td th:text="${prestataire.sexe_utilisateur}"></td>
+								<td><img th:src="@{getPhoto_utilisateur(id_utilisateur=${client.id_utilisateur})}" width="100" height="100"/></td>
+								<td th:text="${prestataire.email_utilisateur}"></td>
+								
+								<td th:text="${prestataire.telephone_utilisateur}"></td> -->
+							<!-- 	<td th:text="${prestataire.categorieService.libelle_categorie}"></td> -->
+								
+								      <td>
+								      <!-- <a th:href="@{detailClient(id_utilisateur=${utilisateur.id_utilisateur})}"
+											class="btn btn-info btn-xs eBtn"><i class="fa fa-pencil"></i>editer</a>| -->
+                           <a title="plus d'information" th:href="@{detailPrestataire(id_utilisateur=${prestataire.id_utilisateur})}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>  </a>
+                         
+                            <a title="supprimer"  th:href="@{supprimerMultiplePrestataire(id_utilisateur=${prestataire.id_utilisateur})}"class="btn btn-danger btn-xs delBtn"><i class="fa fa-trash-o"></i></a>
+                             
+                          </td>
+								
+						    </tr>
+						 
+						
+						</table>
+					 
+                   </div>
+                 <div class="myForm ">
+							<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+								<div class="modal-dialog " role="document">
+									<div class="modal-content ">
+										<div class="modal-header">
+											<h5 class="modal-title ">suppresion</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p class="alert alert-danger">Voulez-vous vraiment supprimer? </p>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-secondary" data-dismiss="modal" >annuler</button>
+											<a href=""  class="btn btn-danger" id="delRef">supprimer</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>  
+						<div class="myForm">
+							<div class="modal" id="myModalBloc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">validation</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p class="alert alert-success">Voulez-vous valider cet utilisateur? </p>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-secondary" data-dismiss="modal" >annuler</button>
+											<a href=""  class="btn btn-primary" id="blocRef">valider</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>  
+		</div>
+	</div>
+	<!-- /page content -->
+</body>
+</html>

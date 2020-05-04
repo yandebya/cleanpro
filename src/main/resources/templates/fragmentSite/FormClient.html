@@ -1,0 +1,95 @@
+    <meta charset="utf-8">
+ <div data-th-fragment="fFclient">
+ 
+<section id="contact">
+
+        <div class="content-box-md">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <!-- Contact Left -->
+                        <div id="contact-left">
+						 <div class="vertical-heading">
+                               
+                                <h2> <strong>Touch</strong></h2>
+                            </div>
+                            <br>
+                           Les champs marqués d'un « * » sont obligatoires et la mise en place du service ne pourra pas être fait s'ils ne
+				 sont pas complétés. En vertu de la création de votre compte que vous allez réaliser sur notre site, les données
+				  vous concernant font l'objet d'un traitement dont le responsable est SOCIETE CLEAN PRO situé a OWENDO
+				    . Elles seront utilisées pour mettre en place et vous fournir le service demandé ainsi que vous 
+				   contacter en cas de problèmes, de prospection commerciale ou d'évolution du service. Elles seront conservées 
+				   pendant 3 ans après la clôture de compte, dernière utilisation du service ou du dernier envoi d'une communication
+				    commerciale. Vos données sont destinées au service relations clientèles et au service technique de SOCIETE CLEAN PRO.
+				     Conformément à la réglementation applicable en matière de protection des données personnelles, vous disposez 
+				     d'un droit d'accès, de rectification, d'opposition, de limitation du traitement, de portabilité pour demander
+				      le transfert de vos données lorsque cela est possible et d'effacement.
+
+                            <ul class="social-list">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <!-- Contact Right -->
+                        <div id="contact-right">
+
+                            <form th:action="@{creationClient}" method="post">
+                                <h4>YANDEBYA </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa repell.</p>
+
+                                <div class="row">
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" placeholder="Votre Nom"required="required" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="email" placeholder="Email " required="required" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="phone" placeholder="Phone No.">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message" placeholder="Message"></textarea>
+                                </div>
+
+                                <div id="submit-btn">
+                                    <a class="btn btn-general btn-yellow" href="#" title="Submit" role="button">Submit</a>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+</div>

@@ -1,0 +1,21 @@
+			
+              <div class="" data-th-fragment="fInfo" xmlns:th="www.thymeleaf.org">
+            <br>
+              <div class="profile clearfix centrer">
+                <a class="fancybox" th:href="@{getPhoto_utilisateur(photo_utilisateur=${utilisateur.photo_utilisateur})}"><img class="img-circle profile_img" th:src="@{getPhoto_utilisateur(photo_utilisateur=${utilisateur.photo_utilisateur})}"width="80" height="80"   alt=""></a> 
+            	   <h3 class="centrer nom_ut"  th:text="${utilisateur.nom_utilisateur}"></h3>
+              </div> 
+
+            </div>
+            <!-- /menu profile quick info -->
+            
+            
+           <!--  <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div> -->

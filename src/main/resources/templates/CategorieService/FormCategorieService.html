@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layout}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>utilisateur</title>
+</head>
+
+<body class="nav-md " >
+
+	<!-- page content -->
+	<div class="right_col "  role="main" data-layout-fragment="content">
+	<h1>Ajout d'une categorie</h1>
+		<div class="x_panel">
+		
+		 <div class="x_title">
+                    <h2>Formulaire creation d'une <small>Categorie</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                  	<form th:action="@{creationCategorieService}" th:field="${categorieService}" class="form-horizontal form-label-left"
+								method="post"
+								enctype="multipart/form-data">
+								
+
+
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Libelle Categorie<span class="required">*</span>
+										
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12 cc"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="nom" required="required"
+											type="text" th:field="${categorieService.libelle_categorie}">
+										<p th:errors="*{categorieService.libelle_categorie}"></p>
+									</div>
+									
+								</div>
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12 "
+										for="name">Description Categorie<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<textarea class="form-control col-md-7 col-xs-12 cc"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="description de cette categorie" required="required"
+											type="text" th:field="${categorieService.description_categorie}"></textarea>
+									</div>
+								</div>
+								
+								 <div class="item form-group">
+						          <div class="centrer"><label>Photo </label></div>
+						            <div class="centrer">
+ 									    <img id="preview" src="images/admin-user-icon-4.jpg" width="90px" height="90px" style="border-radius: 50%"/><br/>
+									    <input type="file" id="image" name="picture" style="display: none;"/>
+									    <!--<input type="hidden" style="display: none" value="0" name="remove" id="remove">-->
+									    <a href="javascript:changeProfile()">Choisissez une photo</a>
+									</div>
+								</div>							
+								
+								          
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <button  type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+		
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

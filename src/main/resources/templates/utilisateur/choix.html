@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layoutEnregistrement}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>utilisateur</title>
+</head>
+
+<body class="nav-md">
+
+	<!-- page content -->
+	<div class="right_col_enregistrement" role="main" data-layout-fragment="content">
+		<div class="x_panel_enregistrement">
+		
+		
+                  
+                  <div class="x_content">
+                  	<div class="row top_tiles "
+					style="padding-left: 100px; margin-top: 20px">
+					<a data-th-href="@{/creerPrestataire}" class="couteur"
+						style="margin-left: 10px;">
+						<button
+							class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12 btn btn-primary btn-lg "
+							style="">
+							<span class="glyphicon glyphicon-list-alt"></span>
+							<div class="count"></div>
+							<h3>Parteniare</h3>
+						</button>
+					</a> <a data-th-href="@{/creerClient}" class="couteur"
+						style="margin-left: 10px;">
+						<button
+							class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12 btn btn-success btn-lg "
+							id="bt"
+							style=" margin-left: 30px">
+							<i class="fa fa-users"></i>
+							<div class="count"></div>
+							<h3>Client</h3>
+						</button>
+					</a>
+				</div>
+				<a data-th-href="@{/creation}">retour</a>
+                  </div>
+		
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

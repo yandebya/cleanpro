@@ -1,0 +1,74 @@
+ <div  data-th-fragment="fHeaderApro">
+
+<header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="site-nav-wrapper">
+
+                    <div class="navbar-header">
+
+                        <!-- Mobile Menu Open Button -->
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+
+                        <!-- Logo -->
+                          <!--   <img src="img/logo/logo.png" alt="logo" width="60" height="60"> -->
+                        
+                    </div>
+
+                    <!-- Main Menu -->
+                    <div class="container">
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav pull-right nav side-menu">
+                               <li  ><a  data-th-href="@{/indexSite}">Accueil</a></li>
+                                <li class="tete1"><a data-th-href="@{/apropos}">A propos</a></li>  
+                                <li><a data-th-href="@{/serviceSite}">Services</a></li>
+                                <li><a data-th-href="@{/Statement}">Fonctionnement</a></li>
+                                <li><a data-th-href="@{/team}">Nos prestataires</a></li>
+                                
+                             
+                                <li><a data-th-href="@{/contactSite}">Contact</a></li>
+                                <li class="">
+                              	    <a href="javascript:;" class="user-profile dropdown-toggle span1" data-toggle="dropdown"aria-expanded="false"> 
+										<span class=""><i class="fa fa-user-plus"></i> Inscription <i class=" fa fa-angle-down"></i></span>
+							        </a>
+								  <ul class="dropdown-menu dropdown-usermenu pull-right">
+									
+									<li><a data-th-href="@{/formSite}" href="javascript:;"><i class=""></i>Client</a></li>
+									<li><a data-th-href="@{/creerPrestataire}" href="login"><i class=""></i> Prestataire</a></li> 
+									<!-- 
+									<li><a data-th-href="@{/inscription}" href="javascript:;"><i class=""></i>Client</a></li>
+									<li><a data-th-href="@{/inscription}" href="login"><i class=""></i> Prestataire</a></li> -->
+								</ul>
+							</li>
+                                 <li><a data-th-href="@{/login}">Connexion</a></li>
+                              
+                              	
+                         </ul>
+                                 
+                        </div>
+						
+					</div>
+
+                    <!-- Mobile Menu -->
+                    <div id="mobile-nav">
+                        <!-- Mobile Menu Close Button -->
+                        <span id="mobile-nav-close-btn">&times;</span>
+
+                        <div id="mobile-nav-content">
+                            <ul class="nav">
+                                <li><a data-th-href="@{/indexSite}">Accueil</a></li>
+                                <li><a data-th-href="@{/apropos}">Apropos</a></li>
+                                <li><a data-th-href="@{/serviceSite}">Services</a></li>
+                                 <li><a data-th-href="@{/team}">Nos prestataires</a></li>
+                                <li><a data-th-href="@{/produit}">Produit</a></li>
+                                <li><a data-th-href="@{/contactSite}">Contact</a></li>
+                                <li><a  data-th-href="@{/formSite}">Inscription</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+ </div>

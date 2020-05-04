@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr" data-layout-decorate="~{fragment/layoutEnregistrement}"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>utilisateur</title>
+</head>
+
+<body class="nav-md " >
+
+	<!-- page content -->
+	<div class="right_col "  role="main" data-layout-fragment="content">
+		<div class="x_panel">
+		
+		 <div class="x_title">
+                    <h2>Formulaire d'inscription <small>partenaire</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  <div class="x_content">
+                  	<form th:action="@{creationPartenaire}" class="form-horizontal form-label-left"
+								method="post"
+								enctype="multipart/form-data">
+								<span class="section">INSCRIPTION D'UN PARTENAIRE</span>
+
+
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Nom<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="nom" required="required"
+											type="text" th:field="${partenaire.nom_utilisateur}">
+									</div>
+								</div>
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Prenom<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="prenom" required="required"
+											type="text" th:field="${partenaire.prenom_utilisateur}">
+									</div>
+								</div>
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">sexe <span class="required">*</span>
+									</label>
+
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input type="radio" th:field="${partenaire.sexe_utilisateur}" value="H" checked="checked" />
+										 <label>MASCULIN</label> <br/>
+										<input type="radio" th:field="${partenaire.sexe_utilisateur}" value="F" />
+										 <label> FEMININ</label>
+									</div>
+								</div>
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Age<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="age" required="required"
+											type="date" th:field="${partenaire.age_utilisateur}">
+									</div>
+								</div>
+					<div class="item form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12"
+							for="name">Photo <span class="required">*</span>
+						</label>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<input class="form-control col-md-7 col-xs-12"
+								data-validate-length-range="6" data-validate-words="2"
+								placeholder="designation categorie" 
+							 type="file" name="picture">
+						</div>
+					</div>
+					<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Email<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="email" required="required"
+											type="email" th:field="${partenaire.email_utilisateur}">
+									</div>
+								</div>
+								
+							
+                       <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Telephone <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
+                           data-validate-words="2"  placeholder="designation categorie" required="required" type="tel" th:field="${partenaire.telephone_utilisateur}">               
+                        </div>
+                      </div>
+                      
+                   <div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">Login<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="login" required="required"
+											type="text" th:field="${partenaire.username}">
+									</div>
+								</div>
+								<div class="item form-group">
+									<label class="control-label col-md-3 col-sm-3 col-xs-12"
+										for="name">mot de passe<span class="required">*</span>
+									</label>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input class="form-control col-md-7 col-xs-12"
+											data-validate-length-range="6" data-validate-words="2"
+											placeholder="mot de passe" required="required"
+											type="password" th:field="${partenaire.password}">
+									</div>
+								</div>
+                  
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <button  type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+		
+		</div>
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

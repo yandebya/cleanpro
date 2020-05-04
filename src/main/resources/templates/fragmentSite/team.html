@@ -1,0 +1,73 @@
+  <meta charset="utf-8">
+  <div data-th-fragment="fTeam" xmlns:th="www.thymeleaf.org">
+<section id="team">
+<!-- <div class="teams">
+		              <div class=" centrerText horizontal-heading">   
+                            <h5 class="">Services</h5>
+                            <h2>Catégories de prestations</h2>	 
+                        </div>
+		</div> -->
+        <div class="content-box-lg_team">
+
+            <div class="container">
+
+                <!-- Team Members -->
+                <div class="row">
+					
+                    <!-- Team Left Side -->
+                    <div class="col-md-6 col-sm-6 wow slideInLeft" data-wow-duration="1s">
+
+                        <div id="team-left">
+
+                            <div class="vertical-heading">
+                               
+                                <h2>Rencontrez nos prestataires<br><strong>Plus de <span th:text="${ndrePVs}"> </span> prestataires nous font confience</strong> </h2>
+
+                            </div>
+                            <p>Un prestataire de services est toute personne physique ou organisme public, qui offre des services sur notre plateforme</p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Team Right Side -->
+                    <div class="col-md-6 col-sm-6 wow slideInRight" data-wow-duration="1s" >
+
+                        <div id="team-members" class="owl-carousel owl-theme">
+
+                            <!-- Member 01 -->
+                            <div class="team-member" th:each=" p:${prestataire}">
+                               <img  th:src="@{getPhoto_utilisateur(photo_utilisateur=${p.photo_utilisateur})}" width="260" height="280"   alt="team member"> 
+                                <!-- <img src="img/team/team-1.jpg" alt="team member" class="img-responsive"> -->
+                                <div class="team-member-overlay">
+                                    <div class="team-member-info text-center">
+                                        <h6 th:text="${p.nom_utilisateur}"></h6>
+                                        <p th:text="${p.categorieService.libelle_categorie}"></p>
+                                        <ul class="social-list">
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+
+                          
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+            </div>
+
+
+
+        </div>
+<img alt="" src="images/equipe.png" width="" height="400px" style="">
+    </section>
+ </div>

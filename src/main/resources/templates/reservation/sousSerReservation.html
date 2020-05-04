@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8"/>
+<head>
+<title>souser</title>
+
+</head>
+
+<body class="nav-md " >
+				<hr class="cb">
+						<h3 class="centrer"> sous Service</h3>
+					
+					<div class="clearfix"></div>
+              
+              <!--    <select multiple class="date-picker form-control col-md-6 col-xs-6 cc centrer" >
+                         		 
+                          	<option 
+		                          	th:each="s:${sousSer}"
+		                          	th:value="${s.id_sousService}"
+		                          	th:text="${s.libelle_sousService}"/>
+                          </select> -->
+                          
+                          
+                          
+                          <fieldset>
+  <legend>Veuillez sélectionner vos intérêts :</legend>
+  <div th:each="s:${sousSer}">
+    <input type="checkbox" id="coding" name="interest" th:value="${s.id_sousService}">
+    <label for="coding" th:text="${s.libelle_sousService}">Développement</label>
+  </div>
+</fieldset>
+                         
+                          
+                          
+                 
+</body>
+</html>
